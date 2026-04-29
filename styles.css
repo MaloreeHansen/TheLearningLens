@@ -1,0 +1,160 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f6fb;
+  color: #1e2132;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.page-shell {
+  padding: 2rem 1.5rem 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero {
+  background: linear-gradient(180deg, #3761ff 0%, #3e7cff 100%);
+  border-radius: 28px;
+  color: white;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.85rem;
+  opacity: 0.88;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.intro {
+  max-width: 46rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.feature-grid article {
+  background: white;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 24px 48px rgba(30, 33, 50, 0.08);
+}
+
+.feature-grid h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.interest-links {
+  background: white;
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 20px 36px rgba(30, 33, 50, 0.06);
+  margin-bottom: 2rem;
+}
+
+.interest-links h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.interest-links ul {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.interest-links a {
+  display: inline-block;
+  color: #1e2132;
+  text-decoration: none;
+  border: 1px solid rgba(30, 33, 50, 0.12);
+  border-radius: 14px;
+  padding: 0.95rem 1.15rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.interest-links a:hover {
+  background: #f1f5ff;
+  transform: translateY(-1px);
+}
+
+.why-section {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 36px rgba(30, 33, 50, 0.06);
+  margin-bottom: 2rem;
+}
+
+.why-section h2 {
+  margin-top: 0;
+}
+
+.why-section ul {
+  padding-left: 1.25rem;
+}
+
+.why-section li {
+  margin: 0.75rem 0;
+}
+
+.next-steps {
+  text-align: center;
+}
+
+.next-steps h2 {
+  margin-bottom: 0.75rem;
+}
+
+.next-steps p {
+  max-width: 38rem;
+  margin: 0 auto 1.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #1e2132;
+  color: white;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 1.5rem 1rem 2rem;
+  }
+  .hero {
+    padding: 2.2rem 1.5rem;
+  }
+}
