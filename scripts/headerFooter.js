@@ -6,10 +6,10 @@ const rootPath = rootDepth ? '../'.repeat(rootDepth) : './';
 const navLinks = [
   { label: 'Home', href: `${rootPath}` },
   { label: 'About', href: `${rootPath}README.html` },
-  { label: 'Security+', href: `${rootPath}security-plus/` },
-  { label: 'Interview Prep', href: `${rootPath}job-interview-preparation/` },
-  { label: 'Job Roles', href: `${rootPath}job-roles/` },
-  { label: 'Tools', href: `${rootPath}technical-tools/` },
+  { label: 'Security+', href: `${rootPath}security-plus/index.html` },
+  { label: 'Interview Prep', href: `${rootPath}job-interview-preparation/index.html` },
+  { label: 'Job Roles', href: `${rootPath}job-roles/index.html` },
+  { label: 'Tools', href: `${rootPath}technical-tools/index.html` },
 ];
 
 const normalizePath = path => path.replace(/\/$/, '');
