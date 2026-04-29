@@ -19,7 +19,7 @@ const footer = document.getElementById('shared-footer');
 
 if (header) {
   header.innerHTML = `
-    <header class="site-header">
+    <nav class="site-header">
       <div class="header-brand">
         <a class="brand-link" href="${rootPath}">The Learning Lens</a>
         <p class="brand-tag">A cyber-aware technical learning hub</p>
@@ -37,15 +37,35 @@ if (header) {
           )
           .join('')}
       </nav>
-    </header>
+    </nav>
   `.trim();
 }
 
 if (footer) {
+  // Build breadcrumb trail
+  const breadcrumbs = [{ label: 'Home', href: rootPath }];
+  let currentPath = rootPath;
+  pathParts.forEach((part, index) => {
+    if (part !== 'index.html' && part !== 'README.html') {
+      currentPath += part + '/';
+      let label = part.replace(/\.html$/, '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      if (part === 'job-interview-preparation') label = 'Interview Prep';
+      if (part === 'job-roles') label = 'Job Roles';
+      if (part === 'technical-tools') label = 'Tools';
+      if (part === 'security-plus') label = 'Security+';
+      breadcrumbs.push({ label, href: currentPath });
+    }
+  });
+
   footer.innerHTML = `
-    <footer class="site-footer">
-      <p>Shared header and footer components make the site easier to maintain.</p>
-      <p>Converted README content into full HTML for GitHub Pages.</p>
-    </footer>
+    <nav class="site-footer">
+      <div class="breadcrumb">
+        ${breadcrumbs.map((crumb, index) => 
+          index === breadcrumbs.length - 1 
+            ? `<span class="breadcrumb-current">${crumb.label}</span>` 
+            : `<a href="${crumb.href}">${crumb.label}</a> › `
+        ).join('')}
+      </div>
+    </nav>
   `.trim();
 }
