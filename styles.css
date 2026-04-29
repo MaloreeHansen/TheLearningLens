@@ -36,6 +36,137 @@ body::before {
   margin: 0 auto;
 }
 
+.site-header,
+.site-footer {
+  background: rgba(12, 22, 40, 0.88);
+  border: 1px solid rgba(116, 213, 255, 0.14);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 1.3rem 1.6rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-brand {
+  min-width: 220px;
+}
+
+.brand-link {
+  color: #dbf7ff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.brand-tag {
+  margin: 0.35rem 0 0;
+  color: #9bc7ff;
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.site-nav-link {
+  color: #c8e8ff;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav-link:hover,
+.site-nav-link.active {
+  background: rgba(84, 255, 161, 0.12);
+  border-color: rgba(84, 255, 161, 0.24);
+  color: #d7ffff;
+}
+
+.site-footer {
+  text-align: center;
+  color: #b9d9ff;
+  font-size: 0.96rem;
+}
+
+.readme-content {
+  background: rgba(5, 13, 29, 0.86);
+  border: 1px solid rgba(92, 212, 255, 0.15);
+  border-radius: 22px;
+  padding: 1.9rem;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+  margin-bottom: 2.4rem;
+}
+
+.readme-content h2 {
+  margin-top: 0;
+  color: #e7f4ff;
+}
+
+.readme-content p,
+.readme-content li {
+  color: #d1dbf5;
+}
+
+.readme-content code {
+  background: rgba(96, 179, 255, 0.12);
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.45rem;
+  color: #b8e7ff;
+}
+
+.readme-content ul {
+  padding-left: 1.25rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.data-table th {
+  background: rgba(84, 196, 255, 0.08);
+  color: #e0f3ff;
+  text-align: left;
+  font-weight: 700;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.data-table ul,
+.data-table ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.highlight-note {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: #a8e9ff;
+  font-size: 0.95rem;
+}
+
 .hero {
   position: relative;
   overflow: hidden;

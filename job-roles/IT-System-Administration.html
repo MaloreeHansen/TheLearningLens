@@ -1,74 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT System Administration Mindmap</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT System Administration | The Learning Lens</title>
+  <link rel="stylesheet" href="../styles.css" />
 </head>
-<body class="bg-slate-50 min-h-screen flex flex-col items-center justify-center p-8 font-sans text-slate-800">
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">IT System Administration</p>
+        <h1>Architecture, operations, and security mapping</h1>
+        <p class="intro">
+          A structural overview of core IT domains, operations, and security mapping for system administration.
+        </p>
+      </div>
+    </section>
 
-    <div class="w-full max-w-7xl overflow-x-auto bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
-        <h1 class="text-3xl font-bold text-center text-slate-800 mb-2">IT System Administration Architecture</h1>
-        <p class="text-center text-slate-500 mb-8">A structural overview of core IT domains, operations, and security mapping</p>
-
-        <!-- Table Container -->
-        <div class="overflow-x-auto w-full">
-            <table class="w-full text-left border-collapse border border-slate-200 rounded-lg shadow-sm bg-white">
-                <thead class="bg-slate-100 text-slate-700">
-                    <tr>
-                        <th class="p-4 border border-slate-200 font-semibold">The Core</th>
-                        <th class="p-4 border border-slate-200 font-semibold">Primary Branch</th>
-                        <th class="p-4 border border-slate-200 font-semibold">Sub-nodes & Elements</th>
-                        <th class="p-4 border border-slate-200 font-semibold">Cross-Connections</th>
-                        <th class="p-4 border border-slate-200 font-semibold">Security Foundation</th>
-                    </tr>
-                </thead>
-                <tbody class="text-slate-600 align-top">
-                    <tr class="hover:bg-slate-50 transition-colors">
-                        <td rowspan="3" class="p-4 border border-slate-200 font-bold text-slate-800 align-middle text-center bg-slate-50 text-xl">IT System Administration</td>
-                        <td class="p-4 border border-slate-200 font-semibold text-blue-600 align-middle">Connectivity (Networking)</td>
-                        <td class="p-4 border border-slate-200">
-                            <ul class="list-disc pl-5 space-y-1">
-                                <li>Physical (Layer 1)</li>
-                                <li>Routing (Layer 3)</li>
-                                <li>DNS/HTTP (Layer 7)</li>
-                            </ul>
-                        </td>
-                        <td class="p-4 border border-slate-200 align-middle text-sm text-slate-500">Connected to Operations via OSI Model troubleshooting</td>
-                        <td rowspan="3" class="p-4 border border-slate-200 font-bold text-red-600 align-middle text-center bg-red-50">
-                            NIST Framework<br>
-                            <span class="text-sm font-normal text-slate-700 block mt-2">Admin must secure all layers</span>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-slate-50 transition-colors">
-                        <td class="p-4 border border-slate-200 font-semibold text-blue-600 align-middle">Infrastructure (Systems)</td>
-                        <td class="p-4 border border-slate-200">
-                            <ul class="list-disc pl-5 space-y-1">
-                                <li>Linux (Systemd/WSL)</li>
-                                <li>Windows Server</li>
-                                <li>Virtualization (Docker)</li>
-                            </ul>
-                        </td>
-                        <td class="p-4 border border-slate-200 align-middle text-sm text-slate-400 italic">Core environmental baseline</td>
-                    </tr>
-                    <tr class="hover:bg-slate-50 transition-colors">
-                        <td class="p-4 border border-slate-200 font-semibold text-yellow-600 align-middle">Operations (Troubleshooting)</td>
-                        <td class="p-4 border border-slate-200">
-                            <ol class="list-decimal pl-5 space-y-1">
-                                <li>Identify</li>
-                                <li>Theory</li>
-                                <li>Test</li>
-                                <li>Plan</li>
-                                <li>Verify</li>
-                                <li>Document</li>
-                            </ol>
-                        </td>
-                        <td class="p-4 border border-slate-200 align-middle text-sm text-slate-500">Applies OSI Model directly to Connectivity issues</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <section class="readme-content">
+      <article>
+        <h2>IT System Administration Architecture</h2>
+        <p>A structural overview of core IT domains, operations, and security mapping.</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>The Core</th>
+              <th>Primary Branch</th>
+              <th>Sub-nodes &amp; Elements</th>
+              <th>Cross-Connections</th>
+              <th>Security Foundation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="3">IT System Administration</td>
+              <td>Connectivity (Networking)</td>
+              <td>
+                <ul>
+                  <li>Physical (Layer 1)</li>
+                  <li>Routing (Layer 3)</li>
+                  <li>DNS/HTTP (Layer 7)</li>
+                </ul>
+              </td>
+              <td>Connected to Operations via OSI Model troubleshooting</td>
+              <td rowspan="3">
+                NIST Framework<br />
+                <span class="highlight-note">Admin must secure all layers</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Infrastructure (Systems)</td>
+              <td>
+                <ul>
+                  <li>Linux (Systemd/WSL)</li>
+                  <li>Windows Server</li>
+                  <li>Virtualization (Docker)</li>
+                </ul>
+              </td>
+              <td>Core environmental baseline</td>
+            </tr>
+            <tr>
+              <td>Operations (Troubleshooting)</td>
+              <td>
+                <ol>
+                  <li>Identify</li>
+                  <li>Theory</li>
+                  <li>Test</li>
+                  <li>Plan</li>
+                  <li>Verify</li>
+                  <li>Document</li>
+                </ol>
+              </td>
+              <td>Applies OSI Model directly to Connectivity issues</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../scripts/headerFooter.js"></script>
 </body>
 </html>
