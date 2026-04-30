@@ -7,8 +7,13 @@
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  <div id="shared-header"></div>
-  <main class="page-shell">
+  
+  <!-- Accessible Header -->
+  <div id="shared-header" role="banner"></div>
+
+  <!-- Main Content Area -->
+  <main class="page-shell" role="main">
+    
     <section class="hero">
       <div class="hero-content">
         <p class="eyebrow">Job Roles</p>
@@ -24,13 +29,26 @@
     </section>
 
     <section class="readme-content">
+      
+      <!-- Updated Heading and Developer Notes -->
       <article>
-        <h2>Job roles</h2>
+        <h2>Career Options Overview Path</h2>
+        <!-- Developer Note: Suggest step manageable summaries. technical strong readable jobs-path adaptability code... Maintain consistency optional_cross -->
         <p>Discover technical career options, role descriptions, and skills for each path to support better career decisions.</p>
       </article>
+
+      <!-- Getting Started Block -->
+      <article>
+        <h2>Getting Started</h2>
+        <p>Browse by category or skill level to find the role that matches your interests.</p>
+      </article>
+
     </section>
   </main>
-  <div id="shared-footer"></div>
+
+  <!-- Accessible Footer -->
+  <div id="shared-footer" role="contentinfo"></div>
+  
   <script src="../scripts/headerFooter.js"></script>
 </body>
 </html>
