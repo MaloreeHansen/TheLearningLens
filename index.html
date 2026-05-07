@@ -81,20 +81,36 @@
       
       if (isFirstVisit) {
         const text = title.textContent;
-        title.textContent = '';
-        title.style.display = 'inline-block';
-        title.style.borderRight = '3px solid var(--accent-color)';
-        title.style.paddingRight = '5px';
-        title.style.animation = 'blink-caret .75s step-end infinite';
+        
+        // Make the container relative to hold the absolute typing layer
+        title.style.position = 'relative';
+        
+        // The hidden span maintains the exact layout box (width, height, line breaks)
+        // The visible absolute span types the text and contains the cursor span.
+        title.innerHTML = `
+          <span style="opacity: 0;" aria-hidden="true">${text}</span>
+          <span class="typing-layer" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%;"></span>
+        `;
+        
+        const typingLayer = title.querySelector('.typing-layer');
         
         // Add cursor blinking animation to styles if not exists
         if (!document.getElementById('typing-styles')) {
           const style = document.createElement('style');
           style.id = 'typing-styles';
           style.innerHTML = `
+            .typing-cursor {
+              display: inline-block;
+              width: 4px;
+              height: 0.9em;
+              background-color: var(--accent-color);
+              margin-left: 4px;
+              vertical-align: baseline;
+              animation: blink-caret .75s step-end infinite;
+            }
             @keyframes blink-caret {
-              from, to { border-color: transparent }
-              50% { border-color: var(--accent-color) }
+              from, to { opacity: 0; }
+              50% { opacity: 1; }
             }
           `;
           document.head.appendChild(style);
@@ -102,19 +118,24 @@
 
         let i = 0;
         const typeWriter = () => {
-          if (i < text.length) {
-            title.textContent += text.charAt(i);
+          if (i <= text.length) {
+            // Update text and append the cursor span dynamically
+            typingLayer.innerHTML = text.substring(0, i) + '<span class="typing-cursor"></span>';
             i++;
+            
             // Randomize typing speed slightly for realism
             const speed = Math.random() * 50 + 30;
-            setTimeout(typeWriter, speed);
-          } else {
-            // Typing finished, remove cursor after a short delay
-            setTimeout(() => {
-              title.style.borderRight = 'none';
-              title.style.animation = 'none';
-              sessionStorage.setItem('homeTyped', 'true');
-            }, 1500);
+            
+            if (i <= text.length) {
+              setTimeout(typeWriter, speed);
+            } else {
+              // Typing finished, remove cursor after a short delay
+              setTimeout(() => {
+                const cursor = typingLayer.querySelector('.typing-cursor');
+                if (cursor) cursor.style.display = 'none';
+                sessionStorage.setItem('homeTyped', 'true');
+              }, 1500);
+            }
           }
         };
         setTimeout(typeWriter, 400); // Initial delay before typing starts
