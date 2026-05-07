@@ -422,3 +422,105 @@ a.hero-badge:hover {
   }
 }
 
+/* Animated Interest Area Cards */
+.interest-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.interest-area-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 200px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  overflow: hidden;
+  transition: all var(--transition-spring);
+  box-shadow: var(--shadow-inner);
+}
+
+/* Background spotlight effect */
+.interest-area-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, var(--accent-bg) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+  z-index: 0;
+}
+
+.interest-area-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-elevated), var(--shadow-inner);
+}
+
+.interest-area-card:hover::before {
+  opacity: 1;
+}
+
+.interest-area-card .card-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.interest-area-card .card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  transition: transform var(--transition-spring);
+}
+
+.interest-area-card h3 {
+  font-size: 1.25rem;
+  margin: 0;
+  transition: transform var(--transition-spring);
+}
+
+.interest-area-card .card-description {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--transition-smooth);
+}
+
+.interest-area-card p {
+  overflow: hidden;
+  margin: 0;
+  opacity: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: opacity var(--transition-smooth);
+}
+
+/* Hover Animations */
+.interest-area-card:hover .card-icon {
+  transform: translateY(-5px) scale(0.9);
+}
+
+.interest-area-card:hover h3 {
+  transform: translateY(-5px);
+  color: var(--accent-color);
+}
+
+.interest-area-card:hover .card-description {
+  grid-template-rows: 1fr;
+}
+
+.interest-area-card:hover p {
+  opacity: 1;
+  margin-top: 0.75rem;
+}
