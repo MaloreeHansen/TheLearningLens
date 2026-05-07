@@ -282,7 +282,8 @@ a.hero-badge:hover {
 /* Sections */
 .interest-links,
 .why-section,
-.next-steps {
+.next-steps,
+.job-roles-navigation {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
@@ -294,7 +295,6 @@ a.hero-badge:hover {
 /* Overlap and Depth */
 .interest-links {
   position: relative;
-  margin-top: -2rem; /* Pull up to overlap slightly */
   z-index: 10;
 }
 
