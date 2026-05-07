@@ -421,3 +421,47 @@ a.hero-badge:hover {
     padding: 1rem;
   }
 }
+
+/* Sticky Sidebar for Site Navigation on Large Screens */
+@media (min-width: 1024px) {
+  .page-shell {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 3rem;
+    align-items: start;
+    max-width: 1400px;
+  }
+  
+  .page-shell > * {
+    grid-column: 1;
+  }
+  
+  .page-shell > .site-navigation-sidebar {
+    grid-column: 2;
+    grid-row: 1 / span 20;
+    position: sticky;
+    top: 2rem;
+    margin-top: 0;
+    padding: 1.5rem;
+    background: rgba(18, 18, 18, 0.5);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 12px 32px var(--shadow-color);
+  }
+  
+  .site-navigation-sidebar h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .site-navigation-sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .site-navigation-sidebar a {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
