@@ -179,7 +179,7 @@ a:hover {
   right: -5%;
   transform: translateY(-50%);
   height: 140%;
-  opacity: 0.04;
+  opacity: 0.15;
   pointer-events: none;
   z-index: 1;
 }
@@ -189,7 +189,6 @@ a:hover {
   width: auto;
   object-fit: contain;
   filter: grayscale(100%);
-  mix-blend-mode: overlay;
 }
 
 .hero-content {
