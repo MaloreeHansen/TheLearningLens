@@ -173,6 +173,25 @@ a:hover {
   background-image: radial-gradient(ellipse at 80% 20%, rgba(132, 169, 140, 0.08) 0%, transparent 50%);
 }
 
+.hero-background-logo {
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  transform: translateY(-50%);
+  height: 140%;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-background-logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  mix-blend-mode: overlay;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
