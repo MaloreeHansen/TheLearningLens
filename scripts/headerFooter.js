@@ -31,8 +31,13 @@ if (header) {
   header.innerHTML = `
     <nav class="site-header">
       <div class="header-brand">
-        <a class="brand-link" href="${rootUrl}index.html">The Learning Lens</a>
-        <p class="brand-tag">A cyber-aware technical learning hub</p>
+        <a href="${rootUrl}index.html" class="header-logo-link">
+          <img src="${rootUrl}assets/mh-logo.png" alt="The Learning Lens Logo" class="header-logo" />
+        </a>
+        <div class="header-brand-text">
+          <a class="brand-link" href="${rootUrl}index.html">The Learning Lens</a>
+          <p class="brand-tag">A cyber-aware technical learning hub</p>
+        </div>
       </div>
       <nav class="site-nav">
         ${navLinks
