@@ -171,24 +171,46 @@ a:hover {
   overflow: hidden;
   /* Asymmetric background styling */
   background-image: radial-gradient(ellipse at 80% 20%, rgba(132, 169, 140, 0.08) 0%, transparent 50%);
+  
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
 }
 
-.hero-background-logo {
-  position: absolute;
-  top: 50%;
-  right: -5%;
-  transform: translateY(-50%);
-  height: 140%;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 1;
+.hero-logo-box {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-inner);
+  padding: 2rem;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
 }
 
-.hero-background-logo img {
-  height: 100%;
-  width: auto;
+.hero-logo-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-inner), 0 16px 32px rgba(0,0,0,0.4);
+}
+
+.hero-logo-box img {
+  width: 100%;
+  height: auto;
   object-fit: contain;
   filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all var(--transition-smooth);
+}
+
+.hero-logo-box:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .hero-content {
@@ -427,6 +449,7 @@ a.hero-badge:hover {
   
   .hero {
     padding: 3rem 1.5rem;
+    grid-template-columns: 1fr;
   }
   
   .interest-links,
