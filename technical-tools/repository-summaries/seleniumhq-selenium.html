@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SeleniumHQ/selenium Summary | The Learning Lens</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="summary.css" />
+</head>
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Repository summaries</p>
+        <h1>SeleniumHQ / selenium</h1>
+        <p class="intro">Selenium is an umbrella project encapsulating a variety of tools and libraries enabling web browser automation, providing infrastructure for the W3C WebDriver specification.</p>
+        <a href="https://github.com/SeleniumHQ/selenium" target="_blank" rel="noopener noreferrer" class="source-link">↗ View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="repo-meta-grid">
+      <div class="repo-meta-card">
+        <h3>Repository health</h3>
+        <table class="meta-table">
+          <tr><td>⭐ Stars</td><td>34.1k</td></tr>
+          <tr><td>🍴 Forks</td><td>8.7k</td></tr>
+          <tr><td>🐛 Open issues</td><td>107</td></tr>
+          <tr><td>📄 License</td><td>Apache-2.0</td></tr>
+          <tr><td>🕐 Last commit</td><td>2026-05-13</td></tr>
+        </table>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Languages</h3>
+        <div class="lang-bar">
+          <span style="width:36%;background:#b07219"></span>
+          <span style="width:16.4%;background:#178600"></span>
+          <span style="width:11.4%;background:#f34b7d"></span>
+          <span style="width:9.7%;background:#f1e05a"></span>
+          <span style="width:8.7%;background:#3572A5"></span>
+          <span style="width:6.1%;background:#701516"></span>
+          <span style="width:11.7%;background:#555"></span>
+        </div>
+        <div class="lang-legend">
+          <span class="l-java">Java 36%</span>
+          <span class="l-csharp">C# 16.4%</span>
+          <span class="l-cpp">C++ 11.4%</span>
+          <span class="l-js">JS 9.7%</span>
+          <span class="l-python">Python 8.7%</span>
+          <span class="l-ruby">Ruby 6.1%</span>
+        </div>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Topics</h3>
+        <div class="topic-badges">
+          <span class="hero-badge">javascript</span>
+          <span class="hero-badge">ruby</span>
+          <span class="hero-badge">python</span>
+          <span class="hero-badge">java</span>
+          <span class="hero-badge">rust</span>
+          <span class="hero-badge">webdriver</span>
+          <span class="hero-badge">dotnet</span>
+          <span class="hero-badge">selenium</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="readme-content">
+      <article>
+        <h2>README contents</h2>
+
+        <h3>Automates browsers. That's it.</h3>
+        <p>Selenium specifically provides an infrastructure for the <a href="https://w3c.github.io/webdriver/" target="_blank">W3C WebDriver specification</a> — a platform and language-neutral coding interface compatible with all major web browsers.</p>
+
+        <h2>Installing</h2>
+        <h3>All platforms</h3>
+        <ul>
+          <li><a href="https://github.com/bazelbuild/bazelisk" target="_blank">Bazelisk</a> — a Bazel wrapper that automatically downloads the correct version.</li>
+          <li>Java JDK version 17 or greater. Set <code>JAVA_HOME</code> to the JDK location.</li>
+        </ul>
+        <h3>macOS</h3>
+        <ul>
+          <li>Xcode command-line tools: <code>xcode-select --install</code></li>
+          <li>Apple Silicon: add <code>build --host_platform=//:rosetta</code> to <code>.bazelrc.local</code></li>
+        </ul>
+
+        <h2>Building</h2>
+        <p>Selenium uses <a href="https://bazel.build/" target="_blank">Bazel</a> for builds. Common commands:</p>
+        <pre><code>bazel build //&lt;language&gt;/...    # build everything for a language
+bazel build grid                 # build just the grid
+./go &lt;language&gt;:build            # simplified build command</code></pre>
+
+        <h2>Developing</h2>
+        <h3>Java</h3>
+        <p>IntelliJ with <a href="https://plugins.jetbrains.com/plugin/8609-bazel" target="_blank">Bazel IJ plugin</a> is recommended. Local Maven install:</p>
+        <pre><code>./go java:install</code></pre>
+        <h3>Python</h3>
+        <p>PEP8 style (120 char lines), enforced with <a href="https://docs.astral.sh/ruff/" target="_blank">ruff</a>. Local setup:</p>
+        <pre><code>pip install -r py/requirements.txt
+./go py:local_dev</code></pre>
+
+        <h2>Testing</h2>
+        <p>Filter tests by size or tag:</p>
+        <pre><code>bazel test //&lt;language&gt;/... --test_size_filters=small
+bazel test //&lt;language&gt;/... --test_tag_filters=chrome</code></pre>
+        <table>
+          <thead><tr><th>Language</th><th>Command</th></tr></thead>
+          <tbody>
+            <tr><td>Java unit</td><td><code>bazel test //java/... --test_size_filters=small</code></td></tr>
+            <tr><td>JavaScript</td><td><code>bazel test //javascript/selenium-webdriver:all</code></td></tr>
+            <tr><td>Python</td><td><code>bazel test //py:all</code></td></tr>
+            <tr><td>Ruby</td><td><code>bazel test //rb/...</code></td></tr>
+            <tr><td>.NET</td><td><code>bazel test //dotnet/test/common</code></td></tr>
+            <tr><td>Rust</td><td><code>bazel test //rust/...</code></td></tr>
+          </tbody>
+        </table>
+
+        <h2>Releasing</h2>
+        <pre><code>./go all:release              # build and release everything
+./go &lt;language&gt;:release       # release a specific language</code></pre>
+      </article>
+    </section>
+
+    <section class="next-steps">
+      <h2>Back to summaries</h2>
+      <p>Return to the full list of repository summaries.</p>
+      <a class="button" href="index.html">All repository summaries</a>
+    </section>
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../../scripts/headerFooter.js"></script>
+</body>
+</html>

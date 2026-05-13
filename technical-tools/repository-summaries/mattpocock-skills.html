@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mattpocock/skills Summary | The Learning Lens</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="summary.css" />
+</head>
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Repository summaries</p>
+        <h1>mattpocock / skills</h1>
+        <p class="intro">Agent skills for real engineering — small, composable, and designed to fix common failure modes with Claude Code, Codex, and other coding agents.</p>
+        <a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener noreferrer" class="source-link">↗ View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="repo-meta-grid">
+      <div class="repo-meta-card">
+        <h3>Repository health</h3>
+        <table class="meta-table">
+          <tr><td>⭐ Stars</td><td>78.8k</td></tr>
+          <tr><td>🍴 Forks</td><td>6.8k</td></tr>
+          <tr><td>🐛 Open issues</td><td>26</td></tr>
+          <tr><td>📄 License</td><td>MIT</td></tr>
+        </table>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Languages</h3>
+        <div class="lang-bar">
+          <span style="width:100%;background:#89e051"></span>
+        </div>
+        <div class="lang-legend">
+          <span class="l-shell">Shell 100%</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="readme-content">
+      <article>
+        <h2>README contents</h2>
+
+        <h3>Quickstart (30-second setup)</h3>
+        <pre><code>npx skills@latest add mattpocock/skills</code></pre>
+        <p>Pick the skills needed, select <code>/setup-matt-pocock-skills</code>, then run it in the agent. It will configure issue tracker, triage labels, and docs location.</p>
+
+        <h2>Why these skills exist</h2>
+
+        <h3>1. The agent didn't do what was expected</h3>
+        <blockquote><p>"No-one knows exactly what they want" — David Thomas &amp; Andrew Hunt, The Pragmatic Programmer</p></blockquote>
+        <p>The most common failure mode is misalignment. The fix is a <strong>grilling session</strong> — getting the agent to ask detailed questions about requirements.</p>
+        <ul>
+          <li><code>/grill-me</code> — for non-code uses</li>
+          <li><code>/grill-with-docs</code> — same as grill-me but also builds shared language and ADRs</li>
+        </ul>
+
+        <h3>2. The agent is way too verbose</h3>
+        <blockquote><p>"With a ubiquitous language, conversations among developers and expressions of the code are all derived from the same domain model." — Eric Evans, Domain-Driven Design</p></blockquote>
+        <p>The fix is a shared language document (<code>CONTEXT.md</code>) that helps agents decode project jargon. Built into <code>/grill-with-docs</code>.</p>
+
+        <h3>3. The code doesn't work</h3>
+        <blockquote><p>"Always take small, deliberate steps. The rate of feedback is your speed limit." — The Pragmatic Programmer</p></blockquote>
+        <p>The fix is feedback loops: static types, browser access, and automated tests. A red-green-refactor loop via <code>/tdd</code>. For debugging: <code>/diagnose</code>.</p>
+
+        <h3>4. A ball of mud was built</h3>
+        <blockquote><p>"Invest in the design of the system every day." — Kent Beck, Extreme Programming Explained</p></blockquote>
+        <p>The fix is caring about code design. Use <code>/to-prd</code>, <code>/zoom-out</code>, and <code>/improve-codebase-architecture</code> every few days.</p>
+
+        <h2>Skills reference</h2>
+
+        <h3>Engineering</h3>
+        <table>
+          <thead><tr><th>Skill</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><code>/diagnose</code></td><td>Disciplined diagnosis loop for hard bugs: reproduce → minimise → hypothesise → instrument → fix → regression-test</td></tr>
+            <tr><td><code>/grill-with-docs</code></td><td>Grilling session that challenges plans against the domain model, sharpens terminology, updates CONTEXT.md and ADRs</td></tr>
+            <tr><td><code>/triage</code></td><td>Triage issues through a state machine of triage roles</td></tr>
+            <tr><td><code>/improve-codebase-architecture</code></td><td>Find deepening opportunities informed by domain language</td></tr>
+            <tr><td><code>/setup-matt-pocock-skills</code></td><td>Scaffold per-repo config (issue tracker, labels, docs layout). Run once per repo</td></tr>
+            <tr><td><code>/tdd</code></td><td>Test-driven development with red-green-refactor loop, one vertical slice at a time</td></tr>
+            <tr><td><code>/to-issues</code></td><td>Break any plan or PRD into independently-grabbable GitHub issues</td></tr>
+            <tr><td><code>/to-prd</code></td><td>Turn conversation context into a PRD and submit as a GitHub issue</td></tr>
+            <tr><td><code>/zoom-out</code></td><td>Tell the agent to explain code in the context of the whole system</td></tr>
+            <tr><td><code>/prototype</code></td><td>Build a throwaway prototype to flesh out a design</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Productivity</h3>
+        <table>
+          <thead><tr><th>Skill</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><code>/caveman</code></td><td>Ultra-compressed communication mode. Cuts token usage ~75%</td></tr>
+            <tr><td><code>/grill-me</code></td><td>Relentless interview about a plan or design until every branch is resolved</td></tr>
+            <tr><td><code>/handoff</code></td><td>Compact the current conversation for another agent to continue</td></tr>
+            <tr><td><code>/write-a-skill</code></td><td>Create new skills with proper structure and progressive disclosure</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Misc</h3>
+        <table>
+          <thead><tr><th>Skill</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td><code>/git-guardrails-claude-code</code></td><td>Block dangerous git commands before they execute</td></tr>
+            <tr><td><code>/migrate-to-shoehorn</code></td><td>Migrate test files from <code>as</code> assertions to @total-typescript/shoehorn</td></tr>
+            <tr><td><code>/scaffold-exercises</code></td><td>Create exercise directory structures with sections, problems, solutions</td></tr>
+            <tr><td><code>/setup-pre-commit</code></td><td>Set up Husky pre-commit hooks with lint-staged, Prettier, type checking</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="next-steps">
+      <h2>Back to summaries</h2>
+      <p>Return to the full list of repository summaries.</p>
+      <a class="button" href="index.html">All repository summaries</a>
+    </section>
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../../scripts/headerFooter.js"></script>
+</body>
+</html>

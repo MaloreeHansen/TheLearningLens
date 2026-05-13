@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>obra/superpowers Summary | The Learning Lens</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="summary.css" />
+</head>
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Repository summaries</p>
+        <h1>obra / superpowers</h1>
+        <p class="intro">A complete software development methodology for coding agents, built on composable skills and initial instructions that make agents use them automatically.</p>
+        <a href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer" class="source-link">↗ View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="repo-meta-grid">
+      <div class="repo-meta-card">
+        <h3>Overview</h3>
+        <table class="meta-table">
+          <tr><td>📄 License</td><td>MIT</td></tr>
+          <tr><td>👤 Author</td><td>Jesse Vincent / Prime Radiant</td></tr>
+          <tr><td>💬 Community</td><td><a href="https://discord.gg/35wsABTejz" target="_blank">Discord</a></td></tr>
+        </table>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Supported agents</h3>
+        <div class="topic-badges">
+          <span class="hero-badge">Claude Code</span>
+          <span class="hero-badge">Codex CLI</span>
+          <span class="hero-badge">Codex App</span>
+          <span class="hero-badge">Gemini CLI</span>
+          <span class="hero-badge">Cursor</span>
+          <span class="hero-badge">OpenCode</span>
+          <span class="hero-badge">GitHub Copilot CLI</span>
+          <span class="hero-badge">Factory Droid</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="readme-content">
+      <article>
+        <h2>README contents</h2>
+
+        <h3>How it works</h3>
+        <p>It starts the moment a coding agent is fired up. Instead of jumping into writing code, it steps back and asks what the real goal is. Once a spec is teased out, it's presented in chunks short enough to actually read.</p>
+        <p>After design sign-off, the agent creates an implementation plan clear enough for an enthusiastic junior engineer to follow. It emphasizes true red/green TDD, YAGNI, and DRY.</p>
+        <p>Then it launches a <strong>subagent-driven-development</strong> process, dispatching agents through each task, inspecting and reviewing their work. It's not uncommon for Claude to work autonomously for a couple hours without deviating from the plan.</p>
+
+        <h2>Installation</h2>
+
+        <h3>Claude Code</h3>
+        <pre><code>/plugin install superpowers@claude-plugins-official</code></pre>
+
+        <h3>Codex CLI</h3>
+        <pre><code>/plugins
+# Search for "superpowers" and select Install Plugin</code></pre>
+
+        <h3>Gemini CLI</h3>
+        <pre><code>gemini extensions install https://github.com/obra/superpowers
+gemini extensions update superpowers  # update later</code></pre>
+
+        <h3>Cursor</h3>
+        <pre><code>/add-plugin superpowers</code></pre>
+
+        <h2>The basic workflow</h2>
+        <table>
+          <thead><tr><th>Phase</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Brainstorming</strong></td><td>Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation.</td></tr>
+            <tr><td><strong>Using git worktrees</strong></td><td>Creates isolated workspace on a new branch, runs project setup, verifies clean test baseline.</td></tr>
+            <tr><td><strong>Writing plans</strong></td><td>Breaks work into bite-sized tasks (2–5 minutes each). Every task has exact file paths, complete code, verification steps.</td></tr>
+            <tr><td><strong>Subagent-driven development</strong></td><td>Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality).</td></tr>
+            <tr><td><strong>Test-driven development</strong></td><td>Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit.</td></tr>
+            <tr><td><strong>Requesting code review</strong></td><td>Reviews against plan, reports issues by severity. Critical issues block progress.</td></tr>
+            <tr><td><strong>Finishing a branch</strong></td><td>Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Skills library</h2>
+        <h3>Testing</h3>
+        <ul><li><strong>test-driven-development</strong> — RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)</li></ul>
+
+        <h3>Debugging</h3>
+        <ul>
+          <li><strong>systematic-debugging</strong> — 4-phase root cause process (root-cause-tracing, defense-in-depth, condition-based-waiting)</li>
+          <li><strong>verification-before-completion</strong> — Ensure it's actually fixed</li>
+        </ul>
+
+        <h3>Collaboration</h3>
+        <ul>
+          <li><strong>brainstorming</strong> — Socratic design refinement</li>
+          <li><strong>writing-plans</strong> — Detailed implementation plans</li>
+          <li><strong>executing-plans</strong> — Batch execution with checkpoints</li>
+          <li><strong>dispatching-parallel-agents</strong> — Concurrent subagent workflows</li>
+          <li><strong>requesting-code-review</strong> — Pre-review checklist</li>
+          <li><strong>receiving-code-review</strong> — Responding to feedback</li>
+          <li><strong>using-git-worktrees</strong> — Parallel development branches</li>
+          <li><strong>finishing-a-development-branch</strong> — Merge/PR decision workflow</li>
+          <li><strong>subagent-driven-development</strong> — Fast iteration with two-stage review</li>
+        </ul>
+
+        <h3>Meta</h3>
+        <ul>
+          <li><strong>writing-skills</strong> — Create new skills following best practices</li>
+          <li><strong>using-superpowers</strong> — Introduction to the skills system</li>
+        </ul>
+
+        <h2>Philosophy</h2>
+        <ul>
+          <li><strong>Test-driven development</strong> — Write tests first, always</li>
+          <li><strong>Systematic over ad-hoc</strong> — Process over guessing</li>
+          <li><strong>Complexity reduction</strong> — Simplicity as primary goal</li>
+          <li><strong>Evidence over claims</strong> — Verify before declaring success</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="next-steps">
+      <h2>Back to summaries</h2>
+      <p>Return to the full list of repository summaries.</p>
+      <a class="button" href="index.html">All repository summaries</a>
+    </section>
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../../scripts/headerFooter.js"></script>
+</body>
+</html>
