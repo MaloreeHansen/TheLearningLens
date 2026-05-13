@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>secdev/scapy Summary | The Learning Lens</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="summary.css" />
+</head>
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Repository Summaries</p>
+        <h1>secdev / scapy</h1>
+        <p class="intro">A powerful Python-based interactive packet manipulation program and library.</p>
+        <a href="https://github.com/secdev/scapy" target="_blank" rel="noopener noreferrer" class="source-link">↗ View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="repo-meta-grid">
+      <div class="repo-meta-card">
+        <h3>Repository Health</h3>
+        <table class="meta-table">
+          <tr><td>⭐ Stars</td><td>12.3k</td></tr>
+          <tr><td>🍴 Forks</td><td>2.2k</td></tr>
+          <tr><td>🕐 Last Commit</td><td>2026-05-09</td></tr>
+        </table>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Languages</h3>
+        <div class="lang-bar">
+          <span style="width:99.8%;background:#3572A5"></span>
+        </div>
+        <div class="lang-legend">
+          <span class="l-python">Python 99.8%</span>
+        </div>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Topics</h3>
+        <div class="topic-badges">
+          <span class="hero-badge">python</span>
+          <span class="hero-badge">security</span>
+          <span class="hero-badge">pcap</span>
+          <span class="hero-badge">network</span>
+          <span class="hero-badge">packet-analyser</span>
+          <span class="hero-badge">scapy</span>
+          <span class="hero-badge">packet-sniffer</span>
+          <span class="hero-badge">packet-crafting</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="readme-content">
+      <article>
+        <h2>README Contents</h2>
+
+        <h3>About Scapy</h3>
+        <p>Scapy is a powerful Python-based interactive packet manipulation program and library. It is able to forge or decode packets of a wide number of protocols, send them on the wire, capture them, store or read them using pcap files, match requests and replies, and much more.</p>
+        <p>It can easily handle most classical tasks like scanning, tracerouting, probing, unit tests, attacks or network discovery (it can replace <code>hping</code>, 85% of <code>nmap</code>, <code>arpspoof</code>, <code>arp-sk</code>, <code>arping</code>, <code>tcpdump</code>, <code>wireshark</code>, <code>p0f</code>, etc.).</p>
+
+        <h2>Getting Started</h2>
+        <p>Scapy is usable either as a <strong>shell</strong> or as a <strong>library</strong>.</p>
+
+        <h3>Shell Demo</h3>
+        <p>Scapy can easily be used as an interactive shell to interact with the network. The following example shows how to send an ICMP Echo Request message to <code>github.com</code>, then display the reply source IP address:</p>
+
+        <pre><code>sudo ./run_scapy
+Welcome to Scapy
+>>> p = IP(dst="github.com")/ICMP()
+>>> r = sr1(p)
+Begin emission:
+.Finished to send 1 packets.
+*
+Received 2 packets, got 1 answers, remaining 0 packets
+>>> r[IP].src
+'192.30.253.113'</code></pre>
+
+        <h2>Installation</h2>
+        <p>Scapy works without any external Python modules on Linux and BSD like operating systems. On Windows, you need to install some mandatory dependencies.</p>
+        <p>On most systems, using Scapy is as simple as running the following commands:</p>
+        <pre><code>git clone https://github.com/secdev/scapy
+cd scapy
+./run_scapy</code></pre>
+        <p>To benefit from all Scapy features, such as plotting, you might want to install Python modules, such as <code>matplotlib</code> or <code>cryptography</code>.</p>
+
+        <h2>Dependencies</h2>
+        <h3>Python (pyproject)</h3>
+        <ul>
+          <li><code>ipython</code></li>
+          <li><code>cryptography</code></li>
+          <li><code>matplotlib</code></li>
+          <li><code>sphinx</code></li>
+          <li><code>tox</code></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="next-steps">
+      <h2>Back to Summaries</h2>
+      <p>Return to the full list of repository summaries.</p>
+      <a class="button" href="index.html">All Repository Summaries</a>
+    </section>
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../../scripts/headerFooter.js"></script>
+</body>
+</html>
