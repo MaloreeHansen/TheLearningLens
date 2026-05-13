@@ -74,6 +74,7 @@ if (footer) {
       if (part === 'job-roles') label = 'Job Roles';
       if (part === 'technical-tools') label = 'Tools';
       if (part === 'security-plus') label = 'Security+';
+      if (part === 'repository-summaries') label = 'Repo Summaries';
       breadcrumbs.push({ label, href: currentBuildPath + 'index.html' });
     }
   });
