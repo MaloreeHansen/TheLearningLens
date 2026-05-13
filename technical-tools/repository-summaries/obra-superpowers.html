@@ -69,18 +69,97 @@ gemini extensions update superpowers  # update later</code></pre>
         <pre><code>/add-plugin superpowers</code></pre>
 
         <h2>The Basic Workflow</h2>
-        <table>
-          <thead><tr><th>Phase</th><th>Description</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Brainstorming</strong></td><td>Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation.</td></tr>
-            <tr><td><strong>Using git worktrees</strong></td><td>Creates isolated workspace on a new branch, runs project setup, verifies clean test baseline.</td></tr>
-            <tr><td><strong>Writing plans</strong></td><td>Breaks work into bite-sized tasks (2–5 minutes each). Every task has exact file paths, complete code, verification steps.</td></tr>
-            <tr><td><strong>Subagent-driven development</strong></td><td>Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality).</td></tr>
-            <tr><td><strong>Test-driven development</strong></td><td>Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit.</td></tr>
-            <tr><td><strong>Requesting code review</strong></td><td>Reviews against plan, reports issues by severity. Critical issues block progress.</td></tr>
-            <tr><td><strong>Finishing a branch</strong></td><td>Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.</td></tr>
-          </tbody>
-        </table>
+        <div class="workflow-flowchart" role="img" aria-label="Superpowers development workflow flowchart showing 7 phases from brainstorming through finishing a branch">
+          <svg viewBox="0 0 700 1080" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:700px;display:block;margin:0 auto;">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#84a98c"/>
+              </marker>
+              <linearGradient id="nodeGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1a1a1c"/>
+                <stop offset="100%" stop-color="#121212"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Step 1: Brainstorming — y=20 -->
+            <rect x="60" y="20" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="70" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="75" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">1</text>
+            <text x="100" y="52" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">PHASE 1</text>
+            <text x="100" y="74" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Brainstorming</text>
+            <text x="100" y="98" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Refine ideas, explore alternatives, validate design</text>
+
+            <!-- Arrow 1→2 -->
+            <line x1="350" y1="120" x2="350" y2="150" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 2: Git Worktrees — y=160 -->
+            <rect x="60" y="160" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="210" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="215" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">2</text>
+            <text x="100" y="192" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">PHASE 2</text>
+            <text x="100" y="214" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Git Worktrees</text>
+            <text x="100" y="238" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Isolated branch, project setup, clean test baseline</text>
+
+            <!-- Arrow 2→3 -->
+            <line x1="350" y1="260" x2="350" y2="290" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 3: Writing Plans — y=300 -->
+            <rect x="60" y="300" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="350" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="355" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">3</text>
+            <text x="100" y="332" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">PHASE 3</text>
+            <text x="100" y="354" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Writing Plans</text>
+            <text x="100" y="378" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Bite-sized tasks with file paths and verification steps</text>
+
+            <!-- Arrow 3→4 -->
+            <line x1="350" y1="400" x2="350" y2="430" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 4: Subagent Dev — y=440 -->
+            <rect x="60" y="440" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="490" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="495" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">4</text>
+            <text x="100" y="472" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">PHASE 4</text>
+            <text x="100" y="494" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Subagent-Driven Development</text>
+            <text x="100" y="518" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Fresh subagent per task, two-stage review</text>
+
+            <!-- Arrow 4→5 -->
+            <line x1="350" y1="540" x2="350" y2="570" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 5: TDD — y=580 -->
+            <rect x="60" y="580" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="630" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="635" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">5</text>
+            <text x="100" y="612" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">PHASE 5</text>
+            <text x="100" y="634" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Test-Driven Development</text>
+            <text x="100" y="658" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">RED → GREEN → REFACTOR → commit</text>
+
+            <!-- Arrow 5→6 -->
+            <line x1="350" y1="680" x2="350" y2="710" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 6: Code Review — y=720 -->
+            <rect x="60" y="720" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="770" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="775" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">6</text>
+            <text x="100" y="752" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">PHASE 6</text>
+            <text x="100" y="774" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Code Review</text>
+            <text x="100" y="798" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Review against plan; critical issues block progress</text>
+
+            <!-- Feedback loop: Code Review → Subagent Dev -->
+            <path d="M 640 770 L 680 770 L 680 490 L 640 490" fill="none" stroke="#84a98c" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#arrow)" opacity="0.35"/>
+            <text x="688" y="635" fill="#84a98c" font-family="Outfit, sans-serif" font-size="11" font-weight="500" opacity="0.5" transform="rotate(-90 688 635)">issues found</text>
+
+            <!-- Arrow 6→7 -->
+            <line x1="350" y1="820" x2="350" y2="850" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 7: Finish Branch — y=860 -->
+            <rect x="60" y="860" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="#84a98c" stroke-width="1"/>
+            <circle cx="30" cy="910" r="22" fill="#84a98c" opacity="0.15" stroke="#84a98c" stroke-width="1.5"/>
+            <text x="30" y="915" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">✓</text>
+            <text x="100" y="892" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">PHASE 7</text>
+            <text x="100" y="914" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Finishing a Branch</text>
+            <text x="100" y="938" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Verify tests, merge / PR / keep / discard</text>
+          </svg>
+        </div>
 
         <h2>Skills Library</h2>
         <h3>Testing</h3>
