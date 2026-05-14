@@ -71,13 +71,71 @@
         <p>The Playbook is compiled from <a href="https://help.github.com/articles/github-flavored-markdown" target="_blank">Markdown</a> files using <a href="https://github.com/jekyll/jekyll" target="_blank">Jekyll</a>. To propose a specific change, submit a <a href="https://help.github.com/articles/creating-a-pull-request" target="_blank">pull request</a> with your change to one of the source Markdown files. The Plays are <a href="https://github.com/usds/playbook/tree/gh-pages/_plays" target="_blank">available in the <code>_plays</code> folder</a>.</p>
 
         <h3>Running the site locally</h3>
-        <ol>
-          <li>Install Ruby and Bundler if not already installed</li>
-          <li>Fork this repository and clone it on your computer</li>
-          <li>Navigate to the folder and run <code>bundle install</code></li>
-          <li>Run <code>jekyll serve --watch</code></li>
-          <li>Visit <code>http://localhost:4000/</code> in your browser</li>
-        </ol>
+        <div class="workflow-flowchart" role="img" aria-label="Running the site locally flowchart showing 5 steps from installing prerequisites to viewing the site">
+          <svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:700px;display:block;margin:0 auto;">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#84a98c"/>
+              </marker>
+              <linearGradient id="nodeGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1a1a1c"/>
+                <stop offset="100%" stop-color="#121212"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Step 1: Prerequisites - y=20 -->
+            <rect x="60" y="20" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="70" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="75" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">1</text>
+            <text x="100" y="52" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">STEP 1</text>
+            <text x="100" y="74" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Prerequisites</text>
+            <text x="100" y="98" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Install Ruby and Bundler if not already installed</text>
+
+            <!-- Arrow 1->2 -->
+            <line x1="350" y1="120" x2="350" y2="150" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 2: Get the Source - y=160 -->
+            <rect x="60" y="160" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="210" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="215" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">2</text>
+            <text x="100" y="192" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">STEP 2</text>
+            <text x="100" y="214" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Get the Source</text>
+            <text x="100" y="238" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Fork this repository and clone it on your computer</text>
+
+            <!-- Arrow 2->3 -->
+            <line x1="350" y1="260" x2="350" y2="290" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 3: Install Dependencies - y=300 -->
+            <rect x="60" y="300" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="350" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="355" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">3</text>
+            <text x="100" y="332" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">STEP 3</text>
+            <text x="100" y="354" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Install Dependencies</text>
+            <text x="100" y="378" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Navigate to the folder and run bundle install</text>
+
+            <!-- Arrow 3->4 -->
+            <line x1="350" y1="400" x2="350" y2="430" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 4: Start the Server - y=440 -->
+            <rect x="60" y="440" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <circle cx="30" cy="490" r="22" fill="none" stroke="#84a98c" stroke-width="1.5" opacity="0.6"/>
+            <text x="30" y="495" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">4</text>
+            <text x="100" y="472" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">STEP 4</text>
+            <text x="100" y="494" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">Start the Server</text>
+            <text x="100" y="518" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Run jekyll serve --watch</text>
+
+            <!-- Arrow 4->5 -->
+            <line x1="350" y1="540" x2="350" y2="570" stroke="#84a98c" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.5"/>
+
+            <!-- Step 5: View the Site - y=580 -->
+            <rect x="60" y="580" width="580" height="100" rx="16" fill="url(#nodeGrad)" stroke="#84a98c" stroke-width="1"/>
+            <circle cx="30" cy="630" r="22" fill="#84a98c" opacity="0.15" stroke="#84a98c" stroke-width="1.5"/>
+            <text x="30" y="635" fill="#84a98c" font-family="Outfit, sans-serif" font-size="16" font-weight="700" text-anchor="middle">✓</text>
+            <text x="100" y="612" fill="#84a98c" font-family="Outfit, sans-serif" font-size="12" font-weight="600" letter-spacing="0.08em">STEP 5</text>
+            <text x="100" y="634" fill="#ededed" font-family="Outfit, sans-serif" font-size="17" font-weight="600">View the Site</text>
+            <text x="100" y="658" fill="#a1a1aa" font-family="Outfit, sans-serif" font-size="13">Visit http://localhost:4000/ in your browser</text>
+          </svg>
+        </div>
 
         <h2>License</h2>
         <p>As a work of the United States Government, this project is in the public domain within the United States, additionally released under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 1.0 Universal public domain dedication</a>.</p>
