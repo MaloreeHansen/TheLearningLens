@@ -29,8 +29,89 @@
 
     <section class="why-section">
       <h2>Summaries</h2>
+      
+      <div class="filter-container" style="margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
+        <label for="topic-filter" style="font-weight: 600; color: var(--text-color);">Filter by Topic:</label>
+        <select id="topic-filter" style="padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: var(--bg-card); color: var(--text-color); font-family: inherit; font-size: 1rem; cursor: pointer; outline: none;">
+          <option value="all">All Topics</option>
+          <option value="ab-testing">ab-testing</option>
+          <option value="ai-analytics">ai-analytics</option>
+          <option value="analytics">analytics</option>
+          <option value="apps">apps</option>
+          <option value="blog-engine">blog-engine</option>
+          <option value="blueteam">blueteam</option>
+          <option value="Claude Code">Claude Code</option>
+          <option value="Codex App">Codex App</option>
+          <option value="Codex CLI">Codex CLI</option>
+          <option value="compression">compression</option>
+          <option value="ctf">ctf</option>
+          <option value="ctfd">ctfd</option>
+          <option value="Cursor">Cursor</option>
+          <option value="cybersecurity">cybersecurity</option>
+          <option value="data-analysis">data-analysis</option>
+          <option value="data-manipulation">data-manipulation</option>
+          <option value="data-warehouse">data-warehouse</option>
+          <option value="digital-services">digital-services</option>
+          <option value="django">django</option>
+          <option value="dotnet">dotnet</option>
+          <option value="education">education</option>
+          <option value="emails">emails</option>
+          <option value="encoding">encoding</option>
+          <option value="encryption">encryption</option>
+          <option value="Factory Droid">Factory Droid</option>
+          <option value="feature-flags">feature-flags</option>
+          <option value="flask">flask</option>
+          <option value="framework">framework</option>
+          <option value="Gemini CLI">Gemini CLI</option>
+          <option value="GitHub Copilot CLI">GitHub Copilot CLI</option>
+          <option value="government">government</option>
+          <option value="hacking">hacking</option>
+          <option value="hacktoberfest">hacktoberfest</option>
+          <option value="hashing">hashing</option>
+          <option value="java">java</option>
+          <option value="javascript">javascript</option>
+          <option value="jekyll">jekyll</option>
+          <option value="liquid">liquid</option>
+          <option value="markdown">markdown</option>
+          <option value="metasploit">metasploit</option>
+          <option value="models">models</option>
+          <option value="network">network</option>
+          <option value="OpenCode">OpenCode</option>
+          <option value="orm">orm</option>
+          <option value="osint">osint</option>
+          <option value="owasp">owasp</option>
+          <option value="owasp-top-10">owasp-top-10</option>
+          <option value="packet-analyser">packet-analyser</option>
+          <option value="packet-crafting">packet-crafting</option>
+          <option value="packet-sniffer">packet-sniffer</option>
+          <option value="parsing">parsing</option>
+          <option value="pcap">pcap</option>
+          <option value="pentesting">pentesting</option>
+          <option value="playbook">playbook</option>
+          <option value="python">python</option>
+          <option value="recon">recon</option>
+          <option value="redteam">redteam</option>
+          <option value="ruby">ruby</option>
+          <option value="rust">rust</option>
+          <option value="scapy">scapy</option>
+          <option value="security">security</option>
+          <option value="selenium">selenium</option>
+          <option value="session-replay">session-replay</option>
+          <option value="static-site-generator">static-site-generator</option>
+          <option value="subdomain-enumeration">subdomain-enumeration</option>
+          <option value="surveys">surveys</option>
+          <option value="templates">templates</option>
+          <option value="usds">usds</option>
+          <option value="vagrant">vagrant</option>
+          <option value="views">views</option>
+          <option value="vulnerable">vulnerable</option>
+          <option value="vulnerable-vm">vulnerable-vm</option>
+          <option value="web">web</option>
+          <option value="webdriver">webdriver</option>
+        </select>
+      </div>
       <div class="interest-areas-grid">
-        <a href="seleniumhq-selenium.html" class="interest-area-card">
+        <a href="seleniumhq-selenium.html" class="interest-area-card" data-topics=\"javascript,ruby,python,java,rust,webdriver,dotnet,selenium\">
           <div class="card-inner">
             <div class="card-icon">🌐</div>
             <h3>SeleniumHQ / selenium</h3>
@@ -39,7 +120,7 @@
             </div>
           </div>
         </a>
-        <a href="mattpocock-skills.html" class="interest-area-card">
+        <a href="mattpocock-skills.html" class="interest-area-card" data-topics=\"\">
           <div class="card-inner">
             <div class="card-icon">🛠️</div>
             <h3>mattpocock / skills</h3>
@@ -48,7 +129,7 @@
             </div>
           </div>
         </a>
-        <a href="obra-superpowers.html" class="interest-area-card">
+        <a href="obra-superpowers.html" class="interest-area-card" data-topics=\"Claude Code,Codex CLI,Codex App,Gemini CLI,Cursor,OpenCode,GitHub Copilot CLI,Factory Droid\">
           <div class="card-inner">
             <div class="card-icon">⚡</div>
             <h3>obra / superpowers</h3>
@@ -57,7 +138,7 @@
             </div>
           </div>
         </a>
-        <a href="django-django.html" class="interest-area-card">
+        <a href="django-django.html" class="interest-area-card" data-topics=\"python,django,views,framework,orm,web,apps,templates,models\">
           <div class="card-inner">
             <div class="card-icon">🐍</div>
             <h3>django / django</h3>
@@ -66,7 +147,7 @@
             </div>
           </div>
         </a>
-        <a href="secdev-scapy.html" class="interest-area-card">
+        <a href="secdev-scapy.html" class="interest-area-card" data-topics=\"python,security,pcap,network,packet-analyser,scapy,packet-sniffer,packet-crafting\">
           <div class="card-inner">
             <div class="card-icon">📡</div>
             <h3>secdev / scapy</h3>
@@ -75,7 +156,7 @@
             </div>
           </div>
         </a>
-        <a href="ctfd-ctfd.html" class="interest-area-card">
+        <a href="ctfd-ctfd.html" class="interest-area-card" data-topics=\"education,flask,security,ctf,ctfd\">
           <div class="card-inner">
             <div class="card-icon">🚩</div>
             <h3>CTFd / CTFd</h3>
@@ -84,7 +165,7 @@
             </div>
           </div>
         </a>
-        <a href="posthog-posthog.html" class="interest-area-card">
+        <a href="posthog-posthog.html" class="interest-area-card" data-topics=\"analytics,feature-flags,ab-testing,session-replay,surveys,data-warehouse,ai-analytics\">
           <div class="card-inner">
             <div class="card-icon">📊</div>
             <h3>PostHog / posthog</h3>
@@ -93,7 +174,7 @@
             </div>
           </div>
         </a>
-        <a href="gchq-cyberchef.html" class="interest-area-card">
+        <a href="gchq-cyberchef.html" class="interest-area-card" data-topics=\"hashing,encoding,compression,encryption,parsing,data-analysis,data-manipulation\">
           <div class="card-inner">
             <div class="card-icon">🔧</div>
             <h3>gchq / CyberChef</h3>
@@ -102,7 +183,7 @@
             </div>
           </div>
         </a>
-        <a href="jekyll-jekyll.html" class="interest-area-card">
+        <a href="jekyll-jekyll.html" class="interest-area-card" data-topics=\"ruby,jekyll,markdown,static-site-generator,liquid,blog-engine\">
           <div class="card-inner">
             <div class="card-icon">📝</div>
             <h3>jekyll / jekyll</h3>
@@ -111,7 +192,7 @@
             </div>
           </div>
         </a>
-        <a href="joe-shenouda-awesome-cyber-skills.html" class="interest-area-card">
+        <a href="joe-shenouda-awesome-cyber-skills.html" class="interest-area-card" data-topics=\"cybersecurity,ctf,hacking,osint,pentesting\">
           <div class="card-inner">
             <div class="card-icon">🎯</div>
             <h3>joe-shenouda / awesome-cyber-skills</h3>
@@ -120,7 +201,7 @@
             </div>
           </div>
         </a>
-        <a href="juice-shop-juice-shop.html" class="interest-area-card">
+        <a href="juice-shop-juice-shop.html" class="interest-area-card" data-topics=\"owasp,security,hacking,ctf,pentesting,owasp-top-10,vulnerable\">
           <div class="card-inner">
             <div class="card-icon">🛒</div>
             <h3>juice-shop / juice-shop</h3>
@@ -129,7 +210,7 @@
             </div>
           </div>
         </a>
-        <a href="laramies-theharvester.html" class="interest-area-card">
+        <a href="laramies-theharvester.html" class="interest-area-card" data-topics=\"osint,recon,emails,subdomain-enumeration,redteam,blueteam,python\">
           <div class="card-inner">
             <div class="card-icon">🔍</div>
             <h3>laramies / theHarvester</h3>
@@ -138,7 +219,7 @@
             </div>
           </div>
         </a>
-        <a href="rapid7-metasploitable3.html" class="interest-area-card">
+        <a href="rapid7-metasploitable3.html" class="interest-area-card" data-topics=\"metasploit,pentesting,vulnerable-vm,vagrant,security\">
           <div class="card-inner">
             <div class="card-icon">💣</div>
             <h3>rapid7 / metasploitable3</h3>
@@ -147,7 +228,7 @@
             </div>
           </div>
         </a>
-        <a href="rapid7-metasploit-framework.html" class="interest-area-card">
+        <a href="rapid7-metasploit-framework.html" class="interest-area-card" data-topics=\"hacktoberfest,metasploit,pentesting,security,ruby\">
           <div class="card-inner">
             <div class="card-icon">⚔️</div>
             <h3>rapid7 / metasploit-framework</h3>
@@ -156,7 +237,7 @@
             </div>
           </div>
         </a>
-        <a href="usds-playbook.html" class="interest-area-card">
+        <a href="usds-playbook.html" class="interest-area-card" data-topics=\"government,digital-services,jekyll,playbook,usds\">
           <div class="card-inner">
             <div class="card-icon">📋</div>
             <h3>usds / playbook</h3>
@@ -170,5 +251,28 @@
   </main>
   <div id="shared-footer"></div>
   <script src="../../scripts/headerFooter.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const topicFilter = document.getElementById("topic-filter");
+      const cards = document.querySelectorAll(".interest-area-card");
+      
+      if (topicFilter) {
+        topicFilter.addEventListener("change", (e) => {
+          const selectedTopic = e.target.value;
+          cards.forEach(card => {
+            const topicsStr = card.getAttribute("data-topics") || "";
+            const topics = topicsStr.split(",").filter(Boolean);
+            if (selectedTopic === "all" || topics.includes(selectedTopic)) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      }
+    });
+  </script>
 </body>
+
 </html>
