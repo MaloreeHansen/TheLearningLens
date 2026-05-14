@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTFd/CTFd Summary | The Learning Lens</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="summary.css" />
+</head>
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Repository Summaries</p>
+        <h1>CTFd / CTFd</h1>
+        <p class="intro">A Capture The Flag framework focusing on ease of use and customizability — with plugins, themes, and dynamic scoring built in.</p>
+        <a href="https://github.com/CTFd/CTFd" target="_blank" rel="noopener noreferrer" class="source-link">↗ View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="repo-meta-grid">
+      <div class="repo-meta-card">
+        <h3>Repository Health</h3>
+        <table class="meta-table">
+          <tr><td>⭐ Stars</td><td>6.7k</td></tr>
+          <tr><td>🍴 Forks</td><td>2.7k</td></tr>
+          <tr><td>🕐 Last Commit</td><td>2026-05-12</td></tr>
+        </table>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Languages</h3>
+        <div class="lang-bar">
+          <span style="width:57.8%;background:#3572A5"></span>
+          <span style="width:19.9%;background:#f1e05a"></span>
+          <span style="width:15.6%;background:#e34c26"></span>
+          <span style="width:4.4%;background:#41b883"></span>
+          <span style="width:2.3%;background:#c6538c"></span>
+        </div>
+        <div class="lang-legend">
+          <span class="l-python">Python 57.8%</span>
+          <span class="l-js">JavaScript 19.9%</span>
+          <span class="l-html">HTML 15.6%</span>
+          <span class="l-vue">Vue 4.4%</span>
+          <span class="l-scss">SCSS 2.0%</span>
+        </div>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Topics</h3>
+        <div class="topic-badges">
+          <span class="hero-badge">education</span>
+          <span class="hero-badge">flask</span>
+          <span class="hero-badge">security</span>
+          <span class="hero-badge">ctf</span>
+          <span class="hero-badge">ctfd</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="readme-content">
+      <article>
+        <h2>README Contents</h2>
+
+        <h3>What is CTFd?</h3>
+        <p>CTFd is a Capture The Flag framework focusing on ease of use and customizability. It comes with everything you need to run a CTF and it's easy to customize with plugins and themes.</p>
+
+        <h2>Features</h2>
+        <ul>
+          <li>Create your own challenges, categories, hints, and flags from the Admin Interface
+            <ul>
+              <li>Dynamic Scoring Challenges</li>
+              <li>Unlockable challenge support</li>
+              <li>Challenge plugin architecture for custom challenges</li>
+              <li>Static &amp; Regex based flags with custom flag plugins</li>
+              <li>File uploads to the server or an Amazon S3-compatible backend</li>
+              <li>Automatic bruteforce protection</li>
+            </ul>
+          </li>
+          <li>Individual and Team based competitions</li>
+          <li>Scoreboard with automatic tie resolution — hide or freeze scores at a specific time</li>
+          <li>Scoregraphs comparing the top 10 teams and team progress graphs</li>
+          <li>Markdown content management system</li>
+          <li>SMTP + Mailgun email support with confirmation and forgot password flows</li>
+          <li>Automatic competition starting and ending</li>
+          <li>Team management, hiding, and banning</li>
+          <li>Import and export of CTF data for archival</li>
+        </ul>
+
+        <h2>Install</h2>
+        <ol>
+          <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+          <li>Modify <code>CTFd/config.ini</code> to your liking.</li>
+          <li>Use <code>python serve.py</code> or <code>flask run</code> in a terminal to drop into debug mode.</li>
+        </ol>
+        <p>Run with Docker:</p>
+        <pre><code>docker run -p 8000:8000 -it ctfd/ctfd</code></pre>
+        <p>Or with Docker Compose:</p>
+        <pre><code>docker compose up</code></pre>
+
+        <h2>Live demo</h2>
+        <p><a href="https://demo.ctfd.io/" target="_blank">https://demo.ctfd.io/</a></p>
+
+        <h2>MajorLeagueCyber integration</h2>
+        <p>CTFd integrates with <a href="https://majorleaguecyber.org/" target="_blank">MajorLeagueCyber</a> (MLC), a CTF stats tracker providing event scheduling, team tracking, and single sign-on. Register an event, then install the client ID and secret in <code>CTFd/config.py</code> or the admin panel.</p>
+        <pre><code>OAUTH_CLIENT_ID = None
+OAUTH_CLIENT_SECRET = None</code></pre>
+      </article>
+    </section>
+
+    <section class="next-steps">
+      <h2>Back to Summaries</h2>
+      <p>Return to the full list of repository summaries.</p>
+      <a class="button" href="index.html">All Repository Summaries</a>
+    </section>
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../../scripts/headerFooter.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gchq/CyberChef Summary | The Learning Lens</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="summary.css" />
+</head>
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Repository Summaries</p>
+        <h1>gchq / CyberChef</h1>
+        <p class="intro">The Cyber Swiss Army Knife — a simple, intuitive web app for encoding, encryption, compression, hashing, and data manipulation in the browser.</p>
+        <a href="https://github.com/gchq/CyberChef" target="_blank" rel="noopener noreferrer" class="source-link">↗ View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="repo-meta-grid">
+      <div class="repo-meta-card">
+        <h3>Repository Health</h3>
+        <table class="meta-table">
+          <tr><td>⭐ Stars</td><td>34.8k</td></tr>
+          <tr><td>🍴 Forks</td><td>3.9k</td></tr>
+          <tr><td>🕐 Last Commit</td><td>2026-05-11</td></tr>
+        </table>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Languages</h3>
+        <div class="lang-bar">
+          <span style="width:97.3%;background:#f1e05a"></span>
+          <span style="width:1.4%;background:#e34c26"></span>
+          <span style="width:1.3%;background:#563d7c"></span>
+        </div>
+        <div class="lang-legend">
+          <span class="l-js">JavaScript 97.3%</span>
+          <span class="l-html">HTML 1.4%</span>
+          <span class="l-css">CSS 1.3%</span>
+        </div>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Topics</h3>
+        <div class="topic-badges">
+          <span class="hero-badge">hashing</span>
+          <span class="hero-badge">encoding</span>
+          <span class="hero-badge">compression</span>
+          <span class="hero-badge">encryption</span>
+          <span class="hero-badge">parsing</span>
+          <span class="hero-badge">data-analysis</span>
+          <span class="hero-badge">data-manipulation</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="readme-content">
+      <article>
+        <h2>README Contents</h2>
+
+        <h3>The Cyber Swiss Army Knife</h3>
+        <p>CyberChef is a simple, intuitive web app for carrying out all manner of "cyber" operations within a web browser. These operations include simple encoding like XOR and Base64, more complex encryption like AES, DES and Blowfish, creating binary and hexdumps, compression and decompression of data, calculating hashes and checksums, IPv6 and X.509 parsing, changing character encodings, and much more.</p>
+        <p>The tool is designed to enable both technical and non-technical analysts to manipulate data in complex ways without having to deal with complex tools or algorithms.</p>
+        <p><a href="https://gchq.github.io/CyberChef" target="_blank">A live demo can be found here</a></p>
+
+        <h2>Running locally with Docker</h2>
+
+        <h3>Option 1: Build the Docker Image yourself</h3>
+        <pre><code>docker build --tag cyberchef --ulimit nofile=10000 .
+docker run -it -p 8080:8080 cyberchef</code></pre>
+
+        <h3>Option 2: Use the pre-built Docker Image</h3>
+        <pre><code>docker run -it -p 8080:8080 ghcr.io/gchq/cyberchef:latest</code></pre>
+        <p>Then navigate to <code>http://localhost:8080</code> in your browser.</p>
+
+        <h2>How it works</h2>
+        <p>There are four main areas in CyberChef:</p>
+        <ol>
+          <li>The <strong>input</strong> box in the top right, where you can paste, type or drag the text or file you want to operate on.</li>
+          <li>The <strong>output</strong> box in the bottom right, where the outcome of your processing will be displayed.</li>
+          <li>The <strong>operations</strong> list on the far left, with all operations in categorised lists or searchable.</li>
+          <li>The <strong>recipe</strong> area in the middle, where you drag operations and specify arguments.</li>
+        </ol>
+
+        <h2>Features</h2>
+        <ul>
+          <li><strong>Drag and drop</strong> — Operations can be dragged in and out of the recipe list. Files up to 2GB can be dragged over the input box.</li>
+          <li><strong>Auto Bake</strong> — CyberChef automatically bakes whenever you modify the input or recipe.</li>
+          <li><strong>Automated encoding detection</strong> — Uses several techniques to automatically detect encodings.</li>
+          <li><strong>Breakpoints</strong> — Set breakpoints on any operation to pause execution and step through.</li>
+          <li><strong>Save and load recipes</strong> — Save recipes to local storage or copy the URL to share.</li>
+          <li><strong>Entirely client-side</strong> — No data is ever sent to the CyberChef web server. Can be downloaded and run locally.</li>
+        </ul>
+
+        <h2>Browser support</h2>
+        <ul>
+          <li>Google Chrome 50+</li>
+          <li>Mozilla Firefox 38+</li>
+        </ul>
+
+        <h2>Contributing</h2>
+        <p>Contributing a new operation is easy. The quickstart script walks you through the process. See the <a href="https://github.com/gchq/CyberChef/wiki/Contributing" target="_blank">Contributing wiki page</a> for an installation walkthrough and coding conventions.</p>
+      </article>
+    </section>
+
+    <section class="next-steps">
+      <h2>Back to Summaries</h2>
+      <p>Return to the full list of repository summaries.</p>
+      <a class="button" href="index.html">All Repository Summaries</a>
+    </section>
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../../scripts/headerFooter.js"></script>
+</body>
+</html>

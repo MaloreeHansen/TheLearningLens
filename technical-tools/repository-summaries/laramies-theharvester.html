@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>laramies/theHarvester Summary | The Learning Lens</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="summary.css" />
+</head>
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Repository Summaries</p>
+        <h1>laramies / theHarvester</h1>
+        <p class="intro">An OSINT tool for the reconnaissance stage of red team assessments — gathers names, emails, IPs, subdomains, and URLs from public sources.</p>
+        <a href="https://github.com/laramies/theHarvester" target="_blank" rel="noopener noreferrer" class="source-link">↗ View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="repo-meta-grid">
+      <div class="repo-meta-card">
+        <h3>Repository Health</h3>
+        <table class="meta-table">
+          <tr><td>⭐ Stars</td><td>16.2k</td></tr>
+          <tr><td>🍴 Forks</td><td>2.5k</td></tr>
+          <tr><td>🕐 Last Commit</td><td>2026-05-12</td></tr>
+        </table>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Languages</h3>
+        <div class="lang-bar">
+          <span style="width:99.8%;background:#3572A5"></span>
+          <span style="width:0.2%;background:#384d54"></span>
+        </div>
+        <div class="lang-legend">
+          <span class="l-python">Python 99.8%</span>
+          <span class="l-docker">Dockerfile 0.2%</span>
+        </div>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Topics</h3>
+        <div class="topic-badges">
+          <span class="hero-badge">osint</span>
+          <span class="hero-badge">recon</span>
+          <span class="hero-badge">emails</span>
+          <span class="hero-badge">subdomain-enumeration</span>
+          <span class="hero-badge">redteam</span>
+          <span class="hero-badge">blueteam</span>
+          <span class="hero-badge">python</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="readme-content">
+      <article>
+        <h2>README Contents</h2>
+
+        <h3>About</h3>
+        <p>theHarvester is a simple to use, yet powerful tool designed to be used during the reconnaissance stage of a red team assessment or penetration test. It performs open source intelligence (OSINT) gathering to help determine a domain's external threat landscape. The tool gathers names, emails, IPs, subdomains, and URLs by using multiple public resources.</p>
+
+        <h2>Install and dependencies</h2>
+        <ul>
+          <li>Python 3.12 or higher required</li>
+          <li>See the <a href="https://github.com/laramies/theHarvester/wiki/Installation" target="_blank">installation wiki</a> for full instructions</li>
+        </ul>
+        <pre><code># Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Clone and run
+git clone https://github.com/laramies/theHarvester
+cd theHarvester
+uv sync
+uv run theHarvester</code></pre>
+
+        <h2>Passive modules</h2>
+        <ul>
+          <li><strong>baidu</strong> — Baidu search engine</li>
+          <li><strong>brave</strong> — Brave Search API</li>
+          <li><strong>censys</strong> — Certificate searches to enumerate subdomains and emails</li>
+          <li><strong>certspotter</strong> — Cert Spotter monitors Certificate Transparency logs</li>
+          <li><strong>crtsh</strong> — Comodo Certificate search</li>
+          <li><strong>dnsdumpster</strong> — Domain research tool for discovering hosts related to a domain</li>
+          <li><strong>duckduckgo</strong> — DuckDuckGo search engine</li>
+          <li><strong>github-code</strong> — GitHub code search engine</li>
+          <li><strong>hackertarget</strong> — Online vulnerability scanners and network intelligence</li>
+          <li><strong>hunter</strong> — Hunter search engine</li>
+          <li><strong>intelx</strong> — Intelx search engine</li>
+          <li><strong>otx</strong> — AlienVault open threat exchange</li>
+          <li><strong>shodan</strong> — Shodan search engine for ports and banners</li>
+          <li><strong>securityTrails</strong> — World's largest repository of historical DNS data</li>
+          <li><strong>urlscan</strong> — URL and website scanner sandbox</li>
+          <li><strong>virustotal</strong> — Domain search</li>
+          <li><strong>zoomeye</strong> — China's version of Shodan</li>
+        </ul>
+
+        <h2>Active modules</h2>
+        <ul>
+          <li>DNS brute force: dictionary brute force enumeration</li>
+          <li>Screenshots: Take screenshots of subdomains that were found</li>
+        </ul>
+
+        <h2>API keys</h2>
+        <p>Many modules require API keys. Documentation to set up API keys: <a href="https://github.com/laramies/theHarvester/wiki/Installation#api-keys" target="_blank">wiki/Installation#api-keys</a>. Free tiers are available for most services.</p>
+      </article>
+    </section>
+
+    <section class="next-steps">
+      <h2>Back to Summaries</h2>
+      <p>Return to the full list of repository summaries.</p>
+      <a class="button" href="index.html">All Repository Summaries</a>
+    </section>
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../../scripts/headerFooter.js"></script>
+</body>
+</html>

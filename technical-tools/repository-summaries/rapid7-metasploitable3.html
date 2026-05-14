@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rapid7/metasploitable3 Summary | The Learning Lens</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="summary.css" />
+</head>
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Repository Summaries</p>
+        <h1>rapid7 / metasploitable3</h1>
+        <p class="intro">A VM built from the ground up with a large number of security vulnerabilities — intended as a target for testing exploits with Metasploit.</p>
+        <a href="https://github.com/rapid7/metasploitable3" target="_blank" rel="noopener noreferrer" class="source-link">↗ View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="repo-meta-grid">
+      <div class="repo-meta-card">
+        <h3>Repository Health</h3>
+        <table class="meta-table">
+          <tr><td>⭐ Stars</td><td>5.6k</td></tr>
+          <tr><td>🍴 Forks</td><td>1.3k</td></tr>
+          <tr><td>🕐 Last Commit</td><td>2025-02-13</td></tr>
+        </table>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Languages</h3>
+        <div class="lang-bar">
+          <span style="width:75.7%;background:#e34c26"></span>
+          <span style="width:22.6%;background:#701516"></span>
+          <span style="width:1.1%;background:#555555"></span>
+          <span style="width:0.6%;background:#89e051"></span>
+        </div>
+        <div class="lang-legend">
+          <span class="l-html">HTML 75.7%</span>
+          <span class="l-ruby">Ruby 22.6%</span>
+          <span class="l-powershell">PowerShell 0.6%</span>
+          <span class="l-shell">Shell 0.5%</span>
+        </div>
+      </div>
+      <div class="repo-meta-card">
+        <h3>Topics</h3>
+        <div class="topic-badges">
+          <span class="hero-badge">metasploit</span>
+          <span class="hero-badge">pentesting</span>
+          <span class="hero-badge">vulnerable-vm</span>
+          <span class="hero-badge">vagrant</span>
+          <span class="hero-badge">security</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="readme-content">
+      <article>
+        <h2>README Contents</h2>
+
+        <p>Metasploitable3 is a VM that is built from the ground up with a large amount of security vulnerabilities. It is intended to be used as a target for testing exploits with <a href="https://github.com/rapid7/metasploit-framework" target="_blank">Metasploit</a>.</p>
+
+        <h2>Quick-start</h2>
+        <p>To use the prebuilt images at <a href="https://app.vagrantup.com/rapid7/" target="_blank">app.vagrantup.com/rapid7/</a>, create a new local metasploitable workspace:</p>
+
+        <p><strong>Linux:</strong></p>
+        <pre><code>mkdir metasploitable3-workspace
+cd metasploitable3-workspace
+curl -O https://raw.githubusercontent.com/rapid7/metasploitable3/master/Vagrantfile &amp;&amp; vagrant up</code></pre>
+
+        <p><strong>Windows:</strong></p>
+        <pre><code>mkdir metasploitable3-workspace
+cd metasploitable3-workspace
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/rapid7/metasploitable3/master/Vagrantfile" -OutFile "Vagrantfile"
+vagrant up</code></pre>
+
+        <h2>System requirements</h2>
+        <ul>
+          <li>OS capable of running all required applications</li>
+          <li>VT-x/AMD-V Supported Processor recommended</li>
+          <li>65 GB available space on drive</li>
+          <li>4.5 GB RAM</li>
+        </ul>
+
+        <h2>Requirements</h2>
+        <ul>
+          <li><a href="https://www.packer.io/intro/getting-started/install.html" target="_blank">Packer</a></li>
+          <li><a href="https://www.vagrantup.com/docs/installation/" target="_blank">Vagrant</a></li>
+          <li><a href="https://github.com/aidanns/vagrant-reload#installation" target="_blank">Vagrant Reload Plugin</a></li>
+          <li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a>, libvirt/qemu-kvm, vmware, or parallels</li>
+          <li>Internet connection</li>
+        </ul>
+
+        <h2>Building automatically</h2>
+        <ul>
+          <li><strong>Linux/OSX:</strong> run <code>./build.sh windows2008</code> or <code>./build.sh ubuntu1404</code></li>
+          <li><strong>Windows:</strong> run <code>.\build.ps1 windows2008</code> or <code>.\build.ps1 ubuntu1404</code></li>
+          <li>Default credentials: Username <code>vagrant</code> / Password <code>vagrant</code></li>
+        </ul>
+
+        <h2>More information</h2>
+        <p>The <a href="https://github.com/rapid7/metasploitable3/wiki/" target="_blank">wiki</a> has a lot more detail and serves as the main source of documentation, including a full <a href="https://github.com/rapid7/metasploitable3/wiki/Vulnerabilities" target="_blank">list of vulnerabilities</a>.</p>
+      </article>
+    </section>
+
+    <section class="next-steps">
+      <h2>Back to Summaries</h2>
+      <p>Return to the full list of repository summaries.</p>
+      <a class="button" href="index.html">All Repository Summaries</a>
+    </section>
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../../scripts/headerFooter.js"></script>
+</body>
+</html>
