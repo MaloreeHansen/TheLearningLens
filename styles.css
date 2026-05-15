@@ -550,3 +550,41 @@ a.hero-badge:hover {
   opacity: 1;
   margin-top: 0.75rem;
 }
+
+/* Mission Statement */
+.mission-statement-section {
+  padding: 4rem 3rem;
+  margin-bottom: 4rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-inner), var(--shadow-elevated);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-statement-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  opacity: 0.8;
+}
+
+.mission-statement-section h2 {
+  font-size: 2.25rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.mission-statement-section .mission-text {
+  font-size: 1.35rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.8;
+}

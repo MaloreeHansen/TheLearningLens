@@ -3,7 +3,7 @@ const rootUrl = new URL('../', scriptUrl.href).href;
 
 const navLinks = [
   { label: 'Home', href: rootUrl + 'index.html' },
-  { label: 'About', href: rootUrl + 'README.html' },
+  { label: 'About', href: rootUrl + 'about.html' },
   { label: 'Security+', href: rootUrl + 'security-plus/index.html' },
   { label: 'Interview Prep', href: rootUrl + 'job-interview-preparation/index.html' },
   { label: 'Job Roles', href: rootUrl + 'job-roles/index.html' },
@@ -67,7 +67,7 @@ if (footer) {
   let currentBuildPath = rootUrl;
   
   pathParts.forEach((part, index) => {
-    if (part !== 'index.html' && part !== 'README.html') {
+    if (part !== 'index.html' && part !== 'about.html') {
       currentBuildPath += part + '/';
       let label = part.replace(/\.html$/, '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
       if (part === 'job-interview-preparation') label = 'Interview Prep';
