@@ -326,7 +326,8 @@ a.hero-badge:hover {
 
 .interest-links h2,
 .why-section h2,
-.next-steps h2 {
+.next-steps h2,
+#interest-areas h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
 }
