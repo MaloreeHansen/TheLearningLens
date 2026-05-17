@@ -1,9 +1,24 @@
-<!DOCTYPE html>
+import re
+
+with open('index.html', 'r') as f:
+    html = f.read()
+
+# Extract sections
+# We know domains start with <section id="X-0" class="why-section"> and end with </section>
+domains = []
+for i in range(1, 6):
+    pattern = re.compile(rf'(<section id=\"{i}-0\" class=\"why-section\">.*?</section>)', re.DOTALL)
+    match = pattern.search(html)
+    if match:
+        domains.append(match.group(1))
+
+# Template for new pages
+template = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Learning Lens | Security+</title>
+  <title>The Learning Lens | Security+ Domain {num}</title>
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -12,20 +27,41 @@
     <section class="hero">
       <div class="hero-content">
         <p class="eyebrow">Security+</p>
-        <h1>Cybersecurity Fundamentals Made Clear</h1>
+        <h1>{title}</h1>
         <div class="hero-badges">
-          <a href="#secure-concepts" class="hero-badge">🔐 Secure Concepts</a>
-          <a href="#exam-notes" class="hero-badge">📘 Exam-Ready Notes</a>
+          <a href="../security-plus/index.html" class="hero-badge">⬅ Back to Security+</a>
         </div>
-        <p class="intro">
-          This section is for Security+ resources, study notes, and practical guides to help learn cybersecurity fundamentals and prepare for the exam.
-        </p>
       </div>
     </section>
 
-    
+    {content}
 
-    
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../scripts/headerFooter.js"></script>
+</body>
+</html>
+"""
+
+titles = [
+    "General Security Concepts",
+    "Threats, Vulnerabilities, and Mitigations",
+    "Security Architecture",
+    "Security Operations",
+    "Security Program Management and Oversight"
+]
+
+for i in range(5):
+    page_html = template.format(num=i+1, title=titles[i], content=domains[i])
+    with open(f'domain-{i+1}.html', 'w') as f:
+        f.write(page_html)
+
+# Now rewrite index.html
+# Remove the <nav class="local-nav">...</nav> completely
+html = re.sub(r'<nav class=\"local-nav\">.*?</nav>', '', html, flags=re.DOTALL)
+
+# Replace <div id="secure-concepts">...</div> with the new grid
+grid_html = """
     <div class="interest-areas-grid" style="margin-bottom: 4rem;">
       <a href="domain-1.html" class="interest-area-card">
         <div class="card-inner">
@@ -73,13 +109,11 @@
         </div>
       </a>
     </div>
-    <section id="exam-notes" class="next-steps">
-      <h2>Exam-Ready Notes</h2>
-      <p>Read the full Security+ overview and study content in the folder README.</p>
-      <a class="button" href="README.html">Open Security+ README</a>
-    </section>
-  </main>
-  <div id="shared-footer"></div>
-  <script src="../scripts/headerFooter.js"></script>
-</body>
-</html>
+"""
+
+html = re.sub(r'<div id=\"secure-concepts\">.*?</div>\n  <section id=\"exam-notes\"', grid_html + '  <section id="exam-notes"', html, flags=re.DOTALL)
+
+with open('index.html', 'w') as f:
+    f.write(html)
+
+print("Split complete")

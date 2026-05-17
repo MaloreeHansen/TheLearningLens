@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Learning Lens | Security+ Domain 2</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div id="shared-header"></div>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Security+</p>
+        <h1>Threats, Vulnerabilities, and Mitigations</h1>
+        <div class="hero-badges">
+          <a href="../security-plus/index.html" class="hero-badge">⬅ Back to Security+</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="2-0" class="why-section">
+    <h2>2.0 Threats, Vulnerabilities, and Mitigations (22%)</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>2.1 Compare and contrast common threat actors and motivations</summary>
+        <ul>
+          <li>
+          <strong>Threat Actors:</strong>
+          <ul>
+            <li>Nation-state</li>
+            <li>Unskilled attacker</li>
+            <li>Hacktivist</li>
+            <li>Insider threat</li>
+            <li>Organized crime</li>
+            <li>Shadow IT</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Attributes of Actors:</strong>
+          <ul>
+            <li>Internal/external</li>
+            <li>Resources/funding</li>
+            <li>Level of sophistication/capability</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Motivations:</strong>
+          <ul>
+            <li>Data exfiltration</li>
+            <li>Espionage</li>
+            <li>Service disruption</li>
+            <li>Blackmail</li>
+            <li>Financial gain</li>
+            <li>Philosophical/political beliefs</li>
+            <li>Ethical</li>
+            <li>Revenge</li>
+            <li>Disruption/chaos</li>
+            <li>War</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>2.2 Explain common threat vectors and attack surfaces</summary>
+        <ul>
+          <li>
+          <strong>Message-Based Vectors:</strong>
+          <ul>
+            <li>Email</li>
+            <li>Short Message Service (SMS)</li>
+            <li>Instant messaging (IM)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Communication & Media Vectors:</strong>
+          <ul>
+            <li>Image-based</li>
+            <li>File-based</li>
+            <li>Voice call</li>
+            <li>Removable device</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Software Vulnerabilities:</strong>
+          <ul>
+            <li>Vulnerable software (Client-based vs. agentless)</li>
+            <li>Unsupported systems and applications</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Network Vectors:</strong>
+          <ul>
+            <li>Unsecure networks (Wireless, Wired, Bluetooth)</li>
+            <li>Open service ports</li>
+            <li>Default credentials</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Supply Chain Vectors:</strong>
+          <ul>
+            <li>Managed service providers (MSPs)</li>
+            <li>Vendors</li>
+            <li>Suppliers</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Human Vectors / Social Engineering:</strong>
+          <ul>
+            <li>Phishing</li>
+            <li>Vishing</li>
+            <li>Smishing</li>
+            <li>Misinformation/disinformation</li>
+            <li>Impersonation</li>
+            <li>Business email compromise</li>
+            <li>Pretexting</li>
+            <li>Watering hole</li>
+            <li>Brand impersonation</li>
+            <li>Typosquatting</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>2.3 Explain various types of vulnerabilities</summary>
+        <ul>
+          <li>
+          <strong>Application-Level:</strong>
+          <ul>
+            <li>Memory injection</li>
+            <li>Buffer overflow</li>
+            <li>Race conditions</li>
+            <li>Time-of-check (TOC)</li>
+            <li>Time-of-use (TOU)</li>
+            <li>Malicious update</li>
+          </ul>
+        </li>
+          <li>
+          <strong>System & Web Infrastructure:</strong>
+          <ul>
+            <li>Operating system (OS)-based</li>
+            <li>Web-based</li>
+            <li>Structured Query Language injection (SQLI)</li>
+            <li>Cross-site scripting (XSS)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Hardware & Firmware:</strong>
+          <ul>
+            <li>Hardware</li>
+            <li>Firmware</li>
+            <li>End-of-life</li>
+            <li>Legacy</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Virtualization & Cloud:</strong>
+          <ul>
+            <li>Virtual machine (VM) escape</li>
+            <li>Resource reuse</li>
+            <li>Cloud-specific</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Supply Chain Dependencies:</strong>
+          <ul>
+            <li>Supply chain</li>
+            <li>Service provider</li>
+            <li>Hardware provider</li>
+            <li>Software provider</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Operational Flaws:</strong>
+          <ul>
+            <li>Cryptographic</li>
+            <li>Misconfiguration</li>
+            <li>Mobile device</li>
+            <li>Side loading</li>
+            <li>Jailbreaking</li>
+            <li>Zero-day</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>2.4 Given a scenario, analyze indicators of malicious activity</summary>
+        <ul>
+          <li>
+          <strong>Malware Attacks:</strong>
+          <ul>
+            <li>Ransomware</li>
+            <li>Trojan</li>
+            <li>Worm</li>
+            <li>Spyware</li>
+            <li>Bloatware</li>
+            <li>Virus</li>
+            <li>Keylogger</li>
+            <li>Logic bomb</li>
+            <li>Rootkit</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Physical Attacks:</strong>
+          <ul>
+            <li>Brute force</li>
+            <li>Radio frequency identification (RFID) cloning</li>
+            <li>Environmental</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Network Attacks:</strong>
+          <ul>
+            <li>Distributed denial-of-service (DDoS) (Amplified, Reflected)</li>
+            <li>Domain Name System (DNS) attacks</li>
+            <li>Wireless</li>
+            <li>On-path</li>
+            <li>Credential replay</li>
+            <li>Malicious code</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Application Attacks:</strong>
+          <ul>
+            <li>Injection</li>
+            <li>Buffer overflow</li>
+            <li>Replay</li>
+            <li>Privilege escalation</li>
+            <li>Forgery</li>
+            <li>Directory traversal</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Cryptographic Attacks:</strong>
+          <ul>
+            <li>Downgrade</li>
+            <li>Collision</li>
+            <li>Birthday</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Password Exploits:</strong>
+          <ul>
+            <li>Spraying</li>
+            <li>Brute force</li>
+          </ul>
+        </li>
+          <li>
+          <strong>System Indicators:</strong>
+          <ul>
+            <li>Account lockout</li>
+            <li>Concurrent session usage</li>
+            <li>Blocked content</li>
+            <li>Impossible travel</li>
+            <li>Resource consumption</li>
+            <li>Resource inaccessibility</li>
+            <li>Out-of-cycle logging</li>
+            <li>Published/documented anomalies</li>
+            <li>Missing logs</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>2.5 Explain the purpose of mitigation techniques used to secure the enterprise</summary>
+        <ul>
+          <li>
+          <strong>Access & Boundary Security:</strong>
+          <ul>
+            <li>Segmentation</li>
+            <li>Access control</li>
+            <li>Access control list (ACL)</li>
+            <li>Permissions</li>
+            <li>Application allow list</li>
+            <li>Isolation</li>
+          </ul>
+        </li>
+          <li>
+          <strong>System Integrity:</strong>
+          <ul>
+            <li>Patching</li>
+            <li>Encryption</li>
+            <li>Monitoring</li>
+            <li>Least privilege</li>
+            <li>Configuration enforcement</li>
+            <li>Decommissioning</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Hardening Techniques:</strong>
+          <ul>
+            <li>Encryption</li>
+            <li>Installation of endpoint protection</li>
+            <li>Host-based firewall</li>
+            <li>Host-based intrusion prevention system (HIPS)</li>
+            <li>Disabling ports/protocols</li>
+            <li>Default password changes</li>
+            <li>Removal of unnecessary software</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  </main>
+  <div id="shared-footer"></div>
+  <script src="../scripts/headerFooter.js"></script>
+</body>
+</html>

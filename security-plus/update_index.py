@@ -1,31 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Learning Lens | Security+</title>
-  <link rel="stylesheet" href="../styles.css" />
-</head>
-<body>
-  <div id="shared-header"></div>
-  <main class="page-shell">
-    <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">Security+</p>
-        <h1>Cybersecurity Fundamentals Made Clear</h1>
-        <div class="hero-badges">
-          <a href="#secure-concepts" class="hero-badge">🔐 Secure Concepts</a>
-          <a href="#exam-notes" class="hero-badge">📘 Exam-Ready Notes</a>
-        </div>
-        <p class="intro">
-          This section is for Security+ resources, study notes, and practical guides to help learn cybersecurity fundamentals and prepare for the exam.
-        </p>
-      </div>
-    </section>
+import re
 
-    
+with open('index.html', 'r') as f:
+    html = f.read()
 
-    
+grid_html = """
     <div class="interest-areas-grid" style="margin-bottom: 4rem;">
       <a href="domain-1.html" class="interest-area-card">
         <div class="card-inner">
@@ -73,13 +51,11 @@
         </div>
       </a>
     </div>
-    <section id="exam-notes" class="next-steps">
-      <h2>Exam-Ready Notes</h2>
-      <p>Read the full Security+ overview and study content in the folder README.</p>
-      <a class="button" href="README.html">Open Security+ README</a>
-    </section>
-  </main>
-  <div id="shared-footer"></div>
-  <script src="../scripts/headerFooter.js"></script>
-</body>
-</html>
+"""
+
+new_html = re.sub(r'<div id=\"secure-concepts\">.*?<section id=\"exam-notes\"', grid_html + '    <section id=\"exam-notes\"', html, flags=re.DOTALL)
+
+with open('index.html', 'w') as f:
+    f.write(new_html)
+
+print('Updated index.html')
