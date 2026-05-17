@@ -333,8 +333,8 @@ a.hero-badge:hover {
 }
 
 .interest-links ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 0;
   list-style: none;
@@ -343,7 +343,7 @@ a.hero-badge:hover {
 .interest-links a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 1.25rem 1.5rem;
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
@@ -387,6 +387,67 @@ a.hero-badge:hover {
   height: 6px;
   border-radius: 50%;
   background-color: var(--accent-color);
+}
+
+/* FAQ Accordion */
+.faq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  transition: all var(--transition-smooth);
+}
+
+.faq-item:hover {
+  border-color: var(--accent-border);
+}
+
+.faq-item summary {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform var(--transition-smooth);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item[open] summary {
+  margin-bottom: 1rem;
+}
+
+.faq-item p {
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  animation: fadeIn var(--transition-smooth);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Next Steps */
@@ -560,7 +621,7 @@ a.hero-badge:hover {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-inner), var(--shadow-elevated);
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
 }
@@ -570,22 +631,25 @@ a.hero-badge:hover {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  background: linear-gradient(90deg, var(--accent-color), transparent);
   opacity: 0.8;
 }
 
 .mission-statement-section h2 {
   font-size: 2.25rem;
   color: var(--accent-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mission-statement-section .mission-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .mission-statement-section .mission-text {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 300;
-  max-width: 800px;
-  margin: 0 auto;
   color: var(--text-secondary);
-  font-style: italic;
   line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
