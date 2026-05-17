@@ -23,16 +23,1418 @@
       </div>
     </section>
 
+    <nav class="local-nav">
+      <div class="site-nav">
+        <a href="#1-0" class="site-nav-link">1.0 General Concepts</a>
+        <a href="#2-0" class="site-nav-link">2.0 Threats & Mitigations</a>
+        <a href="#3-0" class="site-nav-link">3.0 Architecture</a>
+        <a href="#4-0" class="site-nav-link">4.0 Operations</a>
+        <a href="#5-0" class="site-nav-link">5.0 Program Management</a>
+      </div>
+    </nav>
 
-
-    <section id="secure-concepts" class="why-section">
-      <h2>Secure Concepts</h2>
-      <ul>
-        <li>Security principles and best practices.</li>
-        <li>Exam review resources and study aids.</li>
-        <li>Practical cybersecurity guidance for learners.</li>
-      </ul>
-    </section>
+    <div id="secure-concepts">
+      <section id="1-0" class="why-section">
+    <h2>1.0 General Security Concepts (12%)</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>1.1 Compare and contrast various types of security controls</summary>
+        <ul>
+          <li>
+          <strong>Categories:</strong>
+          <ul>
+            <li>Technical</li>
+            <li>Managerial</li>
+            <li>Operational</li>
+            <li>Physical</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Control Types:</strong>
+          <ul>
+            <li>Preventive</li>
+            <li>Deterrent</li>
+            <li>Detective</li>
+            <li>Corrective</li>
+            <li>Compensating</li>
+            <li>Directive</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>1.2 Summarize fundamental security concepts</summary>
+        <ul>
+          <li>
+          <strong>Core Principles:</strong>
+          <ul>
+            <li>Confidentiality, Integrity, and Availability (CIA)</li>
+            <li>Non-repudiation</li>
+          </ul>
+        </li>
+          <li>
+          <strong>AAA Framework:</strong>
+          <ul>
+            <li>Authentication, Authorization, and Accounting (AAA)</li>
+            <li>Authenticating people</li>
+            <li>Authenticating systems</li>
+            <li>Authorization models</li>
+          </ul>
+        </li>
+          <li><strong>Analysis:</strong> Gap analysis</li>
+          <li>
+          <strong>Zero Trust Architecture:</strong>
+          <ul>
+            <li>Control Plane</li>
+            <li>Adaptive identity</li>
+            <li>Threat scope reduction</li>
+            <li>Policy-driven access control</li>
+            <li>Policy Administrator</li>
+            <li>Policy Engine</li>
+            <li>Data Plane</li>
+            <li>Implicit trust zones</li>
+            <li>Subject/System</li>
+            <li>Policy Enforcement Point</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Physical Security Measures:</strong>
+          <ul>
+            <li>Bollards</li>
+            <li>Access control vestibule</li>
+            <li>Fencing</li>
+            <li>Video surveillance</li>
+            <li>Security guard</li>
+            <li>Access badge</li>
+            <li>Lighting</li>
+            <li>Sensors (Infrared, Pressure, Microwave, Ultrasonic)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Deception and Disruption:</strong>
+          <ul>
+            <li>Honeypot</li>
+            <li>Honeynet</li>
+            <li>Honeyfile</li>
+            <li>Honeytoken</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>1.3 Explain the importance of change management processes and the impact to security</summary>
+        <ul>
+          <li>
+          <strong>Business Processes:</strong>
+          <ul>
+            <li>Approval process</li>
+            <li>Ownership</li>
+            <li>Stakeholders</li>
+            <li>Impact analysis</li>
+            <li>Test results</li>
+            <li>Backout plan</li>
+            <li>Maintenance window</li>
+            <li>Standard operating procedure</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Technical Implications:</strong>
+          <ul>
+            <li>Allow lists/deny lists</li>
+            <li>Restricted activities</li>
+            <li>Downtime</li>
+            <li>Service restart</li>
+            <li>Application restart</li>
+            <li>Legacy applications</li>
+            <li>Dependencies</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Documentation Management:</strong>
+          <ul>
+            <li>Updating diagrams</li>
+            <li>Updating policies/procedures</li>
+            <li>Version control</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>1.4 Explain the importance of using appropriate cryptographic solutions</summary>
+        <ul>
+          <li>
+          <strong>Public Key Infrastructure (PKI):</strong>
+          <ul>
+            <li>Public key</li>
+            <li>Private key</li>
+            <li>Key escrow</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Encryption Levels:</strong>
+          <ul>
+            <li>Full-disk</li>
+            <li>Partition</li>
+            <li>File</li>
+            <li>Volume</li>
+            <li>Database</li>
+            <li>Record</li>
+            <li>Transport/communication</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Encryption Types:</strong>
+          <ul>
+            <li>Asymmetric</li>
+            <li>Symmetric</li>
+            <li>Key exchange</li>
+            <li>Algorithms</li>
+            <li>Key length</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Cryptographic Tools:</strong>
+          <ul>
+            <li>Trusted Platform Module (TPM)</li>
+            <li>Hardware security module (HSM)</li>
+            <li>Key management system</li>
+            <li>Secure enclave</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Obfuscation Methods:</strong>
+          <ul>
+            <li>Steganography</li>
+            <li>Tokenization</li>
+            <li>Data masking</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Data Integrity & Validation:</strong>
+          <ul>
+            <li>Hashing</li>
+            <li>Salting</li>
+            <li>Digital signatures</li>
+            <li>Key stretching</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Ledger Technology:</strong>
+          <ul>
+            <li>Blockchain</li>
+            <li>Open public ledger</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Certificates Infrastructure:</strong>
+          <ul>
+            <li>Certificate authorities</li>
+            <li>Certificate revocation lists (CRLs)</li>
+            <li>Online Certificate Status Protocol (OCSP)</li>
+            <li>Self-signed</li>
+            <li>Third-party</li>
+            <li>Root of trust</li>
+            <li>Certificate signing request (CSR) generation</li>
+            <li>Wildcard</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+    </div>
+  </section>
+  <section id="2-0" class="why-section">
+    <h2>2.0 Threats, Vulnerabilities, and Mitigations (22%)</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>2.1 Compare and contrast common threat actors and motivations</summary>
+        <ul>
+          <li>
+          <strong>Threat Actors:</strong>
+          <ul>
+            <li>Nation-state</li>
+            <li>Unskilled attacker</li>
+            <li>Hacktivist</li>
+            <li>Insider threat</li>
+            <li>Organized crime</li>
+            <li>Shadow IT</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Attributes of Actors:</strong>
+          <ul>
+            <li>Internal/external</li>
+            <li>Resources/funding</li>
+            <li>Level of sophistication/capability</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Motivations:</strong>
+          <ul>
+            <li>Data exfiltration</li>
+            <li>Espionage</li>
+            <li>Service disruption</li>
+            <li>Blackmail</li>
+            <li>Financial gain</li>
+            <li>Philosophical/political beliefs</li>
+            <li>Ethical</li>
+            <li>Revenge</li>
+            <li>Disruption/chaos</li>
+            <li>War</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>2.2 Explain common threat vectors and attack surfaces</summary>
+        <ul>
+          <li>
+          <strong>Message-Based Vectors:</strong>
+          <ul>
+            <li>Email</li>
+            <li>Short Message Service (SMS)</li>
+            <li>Instant messaging (IM)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Communication & Media Vectors:</strong>
+          <ul>
+            <li>Image-based</li>
+            <li>File-based</li>
+            <li>Voice call</li>
+            <li>Removable device</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Software Vulnerabilities:</strong>
+          <ul>
+            <li>Vulnerable software (Client-based vs. agentless)</li>
+            <li>Unsupported systems and applications</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Network Vectors:</strong>
+          <ul>
+            <li>Unsecure networks (Wireless, Wired, Bluetooth)</li>
+            <li>Open service ports</li>
+            <li>Default credentials</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Supply Chain Vectors:</strong>
+          <ul>
+            <li>Managed service providers (MSPs)</li>
+            <li>Vendors</li>
+            <li>Suppliers</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Human Vectors / Social Engineering:</strong>
+          <ul>
+            <li>Phishing</li>
+            <li>Vishing</li>
+            <li>Smishing</li>
+            <li>Misinformation/disinformation</li>
+            <li>Impersonation</li>
+            <li>Business email compromise</li>
+            <li>Pretexting</li>
+            <li>Watering hole</li>
+            <li>Brand impersonation</li>
+            <li>Typosquatting</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>2.3 Explain various types of vulnerabilities</summary>
+        <ul>
+          <li>
+          <strong>Application-Level:</strong>
+          <ul>
+            <li>Memory injection</li>
+            <li>Buffer overflow</li>
+            <li>Race conditions</li>
+            <li>Time-of-check (TOC)</li>
+            <li>Time-of-use (TOU)</li>
+            <li>Malicious update</li>
+          </ul>
+        </li>
+          <li>
+          <strong>System & Web Infrastructure:</strong>
+          <ul>
+            <li>Operating system (OS)-based</li>
+            <li>Web-based</li>
+            <li>Structured Query Language injection (SQLI)</li>
+            <li>Cross-site scripting (XSS)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Hardware & Firmware:</strong>
+          <ul>
+            <li>Hardware</li>
+            <li>Firmware</li>
+            <li>End-of-life</li>
+            <li>Legacy</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Virtualization & Cloud:</strong>
+          <ul>
+            <li>Virtual machine (VM) escape</li>
+            <li>Resource reuse</li>
+            <li>Cloud-specific</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Supply Chain Dependencies:</strong>
+          <ul>
+            <li>Supply chain</li>
+            <li>Service provider</li>
+            <li>Hardware provider</li>
+            <li>Software provider</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Operational Flaws:</strong>
+          <ul>
+            <li>Cryptographic</li>
+            <li>Misconfiguration</li>
+            <li>Mobile device</li>
+            <li>Side loading</li>
+            <li>Jailbreaking</li>
+            <li>Zero-day</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>2.4 Given a scenario, analyze indicators of malicious activity</summary>
+        <ul>
+          <li>
+          <strong>Malware Attacks:</strong>
+          <ul>
+            <li>Ransomware</li>
+            <li>Trojan</li>
+            <li>Worm</li>
+            <li>Spyware</li>
+            <li>Bloatware</li>
+            <li>Virus</li>
+            <li>Keylogger</li>
+            <li>Logic bomb</li>
+            <li>Rootkit</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Physical Attacks:</strong>
+          <ul>
+            <li>Brute force</li>
+            <li>Radio frequency identification (RFID) cloning</li>
+            <li>Environmental</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Network Attacks:</strong>
+          <ul>
+            <li>Distributed denial-of-service (DDoS) (Amplified, Reflected)</li>
+            <li>Domain Name System (DNS) attacks</li>
+            <li>Wireless</li>
+            <li>On-path</li>
+            <li>Credential replay</li>
+            <li>Malicious code</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Application Attacks:</strong>
+          <ul>
+            <li>Injection</li>
+            <li>Buffer overflow</li>
+            <li>Replay</li>
+            <li>Privilege escalation</li>
+            <li>Forgery</li>
+            <li>Directory traversal</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Cryptographic Attacks:</strong>
+          <ul>
+            <li>Downgrade</li>
+            <li>Collision</li>
+            <li>Birthday</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Password Exploits:</strong>
+          <ul>
+            <li>Spraying</li>
+            <li>Brute force</li>
+          </ul>
+        </li>
+          <li>
+          <strong>System Indicators:</strong>
+          <ul>
+            <li>Account lockout</li>
+            <li>Concurrent session usage</li>
+            <li>Blocked content</li>
+            <li>Impossible travel</li>
+            <li>Resource consumption</li>
+            <li>Resource inaccessibility</li>
+            <li>Out-of-cycle logging</li>
+            <li>Published/documented anomalies</li>
+            <li>Missing logs</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>2.5 Explain the purpose of mitigation techniques used to secure the enterprise</summary>
+        <ul>
+          <li>
+          <strong>Access & Boundary Security:</strong>
+          <ul>
+            <li>Segmentation</li>
+            <li>Access control</li>
+            <li>Access control list (ACL)</li>
+            <li>Permissions</li>
+            <li>Application allow list</li>
+            <li>Isolation</li>
+          </ul>
+        </li>
+          <li>
+          <strong>System Integrity:</strong>
+          <ul>
+            <li>Patching</li>
+            <li>Encryption</li>
+            <li>Monitoring</li>
+            <li>Least privilege</li>
+            <li>Configuration enforcement</li>
+            <li>Decommissioning</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Hardening Techniques:</strong>
+          <ul>
+            <li>Encryption</li>
+            <li>Installation of endpoint protection</li>
+            <li>Host-based firewall</li>
+            <li>Host-based intrusion prevention system (HIPS)</li>
+            <li>Disabling ports/protocols</li>
+            <li>Default password changes</li>
+            <li>Removal of unnecessary software</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+    </div>
+  </section>
+  <section id="3-0" class="why-section">
+    <h2>3.0 Security Architecture (18%)</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>3.1 Compare and contrast security implications of different architecture models</summary>
+        <ul>
+          <li>
+          <strong>Architecture & Infrastructure Concepts:</strong>
+          <ul>
+            <li>Cloud (Responsibility matrix, Hybrid considerations)</li>
+            <li>Third-party vendors</li>
+            <li>Infrastructure as code (IaC)</li>
+            <li>Serverless</li>
+            <li>Microservices</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Network Isolation Models:</strong>
+          <ul>
+            <li>Network infrastructure</li>
+            <li>Physical isolation (Air-gapped)</li>
+            <li>Logical segmentation</li>
+            <li>Software-defined networking (SDN)</li>
+            <li>On-premises</li>
+            <li>Centralized vs. decentralized</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Deployment Systems:</strong>
+          <ul>
+            <li>Containerization</li>
+            <li>Virtualization</li>
+            <li>IoT</li>
+            <li>Industrial control systems (ICS)/supervisory control and data acquisition (SCADA)</li>
+            <li>Real-time operating system (RTOS)</li>
+            <li>Embedded systems</li>
+            <li>High availability</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Architectural Considerations:</strong>
+          <ul>
+            <li>Availability</li>
+            <li>Resilience</li>
+            <li>Cost</li>
+            <li>Responsiveness</li>
+            <li>Scalability</li>
+            <li>Ease of deployment</li>
+            <li>Risk transference</li>
+            <li>Ease of recovery</li>
+            <li>Patch availability</li>
+            <li>Inability to patch</li>
+            <li>Power</li>
+            <li>Compute</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>3.2 Given a scenario, apply security principles to secure enterprise infrastructure</summary>
+        <ul>
+          <li>
+          <strong>Infrastructure Factors:</strong>
+          <ul>
+            <li>Device placement</li>
+            <li>Security zones</li>
+            <li>Attack surface</li>
+            <li>Connectivity</li>
+            <li>Failure modes (Fail-open, Fail-closed)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Device Attributes:</strong>
+          <ul>
+            <li>Active vs. passive</li>
+            <li>Inline vs. tap/monitor</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Network Appliances:</strong>
+          <ul>
+            <li>Jump server</li>
+            <li>Proxy server</li>
+            <li>Intrusion prevention system (IPS)/intrusion detection system (IDS)</li>
+            <li>Load balancer</li>
+            <li>Sensors</li>
+            <li>Port security</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Access Authentication:</strong>
+          <ul>
+            <li>802.1X</li>
+            <li>Extensible Authentication Protocol (EAP)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Firewall Deployments:</strong>
+          <ul>
+            <li>Web application firewall (WAF)</li>
+            <li>Unified threat management (UTM)</li>
+            <li>Next-generation firewall (NGFW)</li>
+            <li>Layer 4/Layer 7</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Secure Communication & Access:</strong>
+          <ul>
+            <li>Virtual private network (VPN)</li>
+            <li>Remote access</li>
+            <li>Tunneling</li>
+            <li>Transport Layer Security (TLS)</li>
+            <li>Internet protocol security (IPSec)</li>
+            <li>Software-defined wide area network (SD-WAN)</li>
+            <li>Secure access service edge (SASE)</li>
+            <li>Selection of effective controls</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>3.3 Compare and contrast concepts and strategies to protect data</summary>
+        <ul>
+          <li>
+          <strong>Data Types:</strong>
+          <ul>
+            <li>Regulated</li>
+            <li>Trade secret</li>
+            <li>Intellectual property</li>
+            <li>Legal information</li>
+            <li>Financial information</li>
+            <li>Human- and non-human-readable</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Data Classifications:</strong>
+          <ul>
+            <li>Sensitive</li>
+            <li>Confidential</li>
+            <li>Public</li>
+            <li>Restricted</li>
+            <li>Private</li>
+            <li>Critical</li>
+          </ul>
+        </li>
+          <li>
+          <strong>General Considerations:</strong>
+          <ul>
+            <li>Data states (Data at rest, Data in transit, Data in use)</li>
+            <li>Data sovereignty</li>
+            <li>Geolocation</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Security Methods:</strong>
+          <ul>
+            <li>Geographic restrictions</li>
+            <li>Encryption</li>
+            <li>Hashing</li>
+            <li>Masking</li>
+            <li>Tokenization</li>
+            <li>Obfuscation</li>
+            <li>Segmentation</li>
+            <li>Permission restrictions</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>3.4 Explain the importance of resilience and recovery in security architecture</summary>
+        <ul>
+          <li>
+          <strong>High Availability & Platforms:</strong>
+          <ul>
+            <li>Load balancing vs. clustering</li>
+            <li>Platform diversity</li>
+            <li>Multi-cloud systems</li>
+            <li>Continuity of operations</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Disaster Recovery Sites:</strong>
+          <ul>
+            <li>Site considerations (Hot, Cold, Warm)</li>
+            <li>Geographic dispersion</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Capacity Planning Elements:</strong>
+          <ul>
+            <li>People</li>
+            <li>Technology</li>
+            <li>Infrastructure</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Testing Strategies:</strong>
+          <ul>
+            <li>Tabletop exercises</li>
+            <li>Fail over</li>
+            <li>Simulation</li>
+            <li>Parallel processing</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Backup Systems:</strong>
+          <ul>
+            <li>Onsite/offsite</li>
+            <li>Frequency</li>
+            <li>Encryption</li>
+            <li>Snapshots</li>
+            <li>Recovery</li>
+            <li>Replication</li>
+            <li>Journaling</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Power Redundancy:</strong>
+          <ul>
+            <li>Generators</li>
+            <li>Uninterruptible power supply (UPS)</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+    </div>
+  </section>
+  <section id="4-0" class="why-section">
+    <h2>4.0 Security Operations (28%)</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>4.1 Given a scenario, apply common security techniques to computing resources</summary>
+        <ul>
+          <li>
+          <strong>Secure Baselines Lifecycle:</strong>
+          <ul>
+            <li>Establish</li>
+            <li>Deploy</li>
+            <li>Maintain</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Hardening Targets:</strong>
+          <ul>
+            <li>Mobile devices</li>
+            <li>Workstations</li>
+            <li>Switches</li>
+            <li>Routers</li>
+            <li>Cloud infrastructure</li>
+            <li>Servers</li>
+            <li>ICS/SCADA</li>
+            <li>Embedded systems</li>
+            <li>RTOS</li>
+            <li>IoT devices</li>
+            <li>Wireless devices</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Installation & Deployment:</strong>
+          <ul>
+            <li>Site surveys</li>
+            <li>Heat maps</li>
+            <li>Mobile solutions (Mobile device management (MDM))</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Mobile Models & Connectivity:</strong>
+          <ul>
+            <li>Bring your own device (BYOD)</li>
+            <li>Corporate-owned, personally enabled (COPE)</li>
+            <li>Choose your own device (CYOD)</li>
+            <li>Connection methods (Cellular, Wi-Fi, Bluetooth)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Wireless Security Configurations:</strong>
+          <ul>
+            <li>Wi-Fi Protected Access 3 (WPA3)</li>
+            <li>AAA/Remote Authentication Dial-In User Service (RADIUS)</li>
+            <li>Cryptographic protocols</li>
+            <li>Authentication protocols</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Application-Level Security:</strong>
+          <ul>
+            <li>Input validation</li>
+            <li>Secure cookies</li>
+            <li>Static code analysis</li>
+            <li>Code signing</li>
+            <li>Sandboxing</li>
+            <li>Monitoring</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>4.2 Explain the security implications of proper hardware, software, and data asset management</summary>
+        <ul>
+          <li>
+          <strong>Asset Lifecycle & Accounting:</strong>
+          <ul>
+            <li>Acquisition/procurement process</li>
+            <li>Assignment/accounting</li>
+            <li>Ownership</li>
+            <li>Classification</li>
+            <li>Monitoring/asset tracking</li>
+            <li>Inventory</li>
+            <li>Enumeration</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Decommissioning & Lifecycle Protection:</strong>
+          <ul>
+            <li>Disposal/decommissioning</li>
+            <li>Sanitization</li>
+            <li>Destruction</li>
+            <li>Certification</li>
+            <li>Data retention</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>4.3 Explain various activities associated with vulnerability management</summary>
+        <ul>
+          <li>
+          <strong>Identification Methodologies:</strong>
+          <ul>
+            <li>Vulnerability scan</li>
+            <li>Application security (Static analysis, Dynamic analysis, Package monitoring)</li>
+            <li>Threat feed (Open-source intelligence (OSINT), Proprietary/third-party, Information-sharing organization, Dark web)</li>
+            <li>Penetration testing</li>
+            <li>Responsible disclosure program</li>
+            <li>Bug bounty program</li>
+            <li>System/process audit</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Analysis & Categorization:</strong>
+          <ul>
+            <li>Confirmation</li>
+            <li>False positive</li>
+            <li>False negative</li>
+            <li>Prioritize</li>
+            <li>Common Vulnerability Scoring System (CVSS)</li>
+            <li>Common Vulnerability Enumeration (CVE)</li>
+            <li>Vulnerability classification</li>
+            <li>Exposure factor</li>
+            <li>Environmental variables</li>
+            <li>Industry/organizational impact</li>
+            <li>Risk tolerance</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Response, Remediation, & Validation:</strong>
+          <ul>
+            <li>Vulnerability response and remediation</li>
+            <li>Patching</li>
+            <li>Insurance</li>
+            <li>Segmentation</li>
+            <li>Compensating controls</li>
+            <li>Exceptions and exemptions</li>
+            <li>Validation of remediation</li>
+            <li>Rescanning</li>
+            <li>Audit</li>
+            <li>Verification</li>
+            <li>Reporting</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>4.4 Explain security alerting and monitoring concepts and tools</summary>
+        <ul>
+          <li>
+          <strong>Resource Monitoring Operations:</strong>
+          <ul>
+            <li>Systems</li>
+            <li>Applications</li>
+            <li>Infrastructure</li>
+            <li>Activities (Log aggregation, Alerting, Scanning, Reporting, Archiving)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Alert Handling:</strong>
+          <ul>
+            <li>Alert response and remediation/validation</li>
+            <li>Quarantine</li>
+            <li>Alert tuning</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Operations Toolsets:</strong>
+          <ul>
+            <li>Security Content Automation Protocol (SCAP)</li>
+            <li>Benchmarks</li>
+            <li>Agents/agentless</li>
+            <li>Security information and event management (SIEM)</li>
+            <li>Antivirus</li>
+            <li>Data loss prevention (DLP)</li>
+            <li>Simple Network Management Protocol (SNMP) traps</li>
+            <li>NetFlow</li>
+            <li>Vulnerability scanners</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>4.5 Given a scenario, modify enterprise capabilities to enhance security</summary>
+        <ul>
+          <li>
+          <strong>Network Layer Protections:</strong>
+          <ul>
+            <li>Firewall (Rules, Access lists, Ports/protocols, Screened subnets)</li>
+            <li>IDS/IPS (Trends, Signatures)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Web & OS Defenses:</strong>
+          <ul>
+            <li>Web filter (Agent-based, Centralized proxy, Universal Resource Locator (URL) scanning, Content categorization, Block rules, Reputation)</li>
+            <li>Operating system security (Group Policy, SELinux)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Protocol & Communications Security:</strong>
+          <ul>
+            <li>Implementation of secure protocols (Protocol selection, Port selection, Transport method)</li>
+            <li>DNS filtering</li>
+            <li>Gateway</li>
+            <li>File integrity monitoring</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Email Domain Protections:</strong>
+          <ul>
+            <li>Domain-based Message Authentication Reporting and Conformance (DMARC)</li>
+            <li>Domainkeys Identified Mail (DKIM)</li>
+            <li>Sender Policy Framework (SPF)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Advanced Endpoint & Access Controls:</strong>
+          <ul>
+            <li>DLP</li>
+            <li>Network access control (NAC)</li>
+            <li>Endpoint detection and response (EDR)/extended detection and response (XDR)</li>
+            <li>User behavior analytics</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>4.6 Given a scenario, implement and maintain identity and access management</summary>
+        <ul>
+          <li>
+          <strong>Identity Governance:</strong>
+          <ul>
+            <li>Provisioning/de-provisioning user accounts</li>
+            <li>Permission assignments and implications</li>
+            <li>Identity proofing</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Federation & Directory Services:</strong>
+          <ul>
+            <li>Federation</li>
+            <li>Single sign-on (SSO)</li>
+            <li>Lightweight Directory Access Protocol (LDAP)</li>
+            <li>Open authorization (OAuth)</li>
+            <li>Security Assertions Markup Language (SAML)</li>
+            <li>Interoperability</li>
+            <li>Attestation</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Access Models:</strong>
+          <ul>
+            <li>Mandatory</li>
+            <li>Discretionary</li>
+            <li>Role-based</li>
+            <li>Rule-based</li>
+            <li>Attribute-based</li>
+            <li>Time-of-day restrictions</li>
+            <li>Least privilege</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Multifactor Authentication (MFA):</strong>
+          <ul>
+            <li>Implementations</li>
+            <li>Biometrics</li>
+            <li>Hard/soft authentication tokens</li>
+            <li>Security keys</li>
+            <li>Factors (Something you know, Something you have, Something you are, Somewhere you are)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Password Controls:</strong>
+          <ul>
+            <li>Password concepts</li>
+            <li>Password best practices</li>
+            <li>Length</li>
+            <li>Complexity</li>
+            <li>Reuse</li>
+            <li>Expiration</li>
+            <li>Age</li>
+            <li>Password managers</li>
+            <li>Passwordless</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Privileged Access Frameworks:</strong>
+          <ul>
+            <li>Privileged access management tools</li>
+            <li>Just-in-time permissions</li>
+            <li>Password vaulting</li>
+            <li>Ephemeral credentials</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>4.7 Explain the importance of automation and orchestration related to secure operations</summary>
+        <ul>
+          <li>
+          <strong>Automation Use Cases:</strong>
+          <ul>
+            <li>Scripting use cases</li>
+            <li>User provisioning</li>
+            <li>Resource provisioning</li>
+            <li>Guard rails</li>
+            <li>Security groups</li>
+            <li>Ticket creation</li>
+            <li>Escalation</li>
+            <li>Enabling/disabling services and access</li>
+            <li>Continuous integration and testing</li>
+            <li>Integrations and Application programming interfaces (APIs)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Operational Benefits:</strong>
+          <ul>
+            <li>Efficiency/time saving</li>
+            <li>Enforcing baselines</li>
+            <li>Standard infrastructure configurations</li>
+            <li>Scaling in a secure manner</li>
+            <li>Employee retention</li>
+            <li>Reaction time</li>
+            <li>Workforce multiplier</li>
+          </ul>
+        </li>
+          <li>
+          <strong>System Considerations:</strong>
+          <ul>
+            <li>Complexity</li>
+            <li>Cost</li>
+            <li>Single point of failure</li>
+            <li>Technical debt</li>
+            <li>Ongoing supportability</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>4.8 Explain appropriate incident response activities</summary>
+        <ul>
+          <li>
+          <strong>Lifecycle Process:</strong>
+          <ul>
+            <li>Preparation</li>
+            <li>Detection</li>
+            <li>Analysis</li>
+            <li>Containment</li>
+            <li>Eradication</li>
+            <li>Recovery</li>
+            <li>Lessons learned</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Testing & Readiness:</strong>
+          <ul>
+            <li>Training</li>
+            <li>Testing</li>
+            <li>Tabletop exercise</li>
+            <li>Simulation</li>
+            <li>Root cause analysis</li>
+            <li>Threat hunting</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Digital Forensics Procedures:</strong>
+          <ul>
+            <li>Digital forensics</li>
+            <li>Legal hold</li>
+            <li>Chain of custody</li>
+            <li>Acquisition</li>
+            <li>Reporting</li>
+            <li>Preservation</li>
+            <li>E-discovery</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>4.9 Given a scenario, use data sources to support an investigation</summary>
+        <ul>
+          <li>
+          <strong>Log Data Analysis:</strong>
+          <ul>
+            <li>Firewall logs</li>
+            <li>Application logs</li>
+            <li>Endpoint logs</li>
+            <li>OS-specific security logs</li>
+            <li>IPS/IDS logs</li>
+            <li>Network logs</li>
+            <li>Metadata</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Investigative Sources:</strong>
+          <ul>
+            <li>Data sources</li>
+            <li>Vulnerability scans</li>
+            <li>Automated reports</li>
+            <li>Dashboards</li>
+            <li>Packet captures</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+    </div>
+  </section>
+  <section id="5-0" class="why-section">
+    <h2>5.0 Security Program Management and Oversight (20%)</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>5.1 Summarize elements of effective security governance</summary>
+        <ul>
+          <li>
+          <strong>Framework Components:</strong>
+          <ul>
+            <li>Guidelines</li>
+            <li>Policies (Acceptable use policy (AUP), Information security policies, Business continuity, Disaster recovery, Incident response, Software development lifecycle (SDLC), Change management)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Operational Controls:</strong>
+          <ul>
+            <li>Standards (Password, Access control, Physical security, Encryption)</li>
+            <li>Procedures (Change management, Onboarding/offboarding, Playbooks)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>External Environments:</strong>
+          <ul>
+            <li>Regulatory</li>
+            <li>Legal</li>
+            <li>Industry</li>
+            <li>Local/regional</li>
+            <li>National</li>
+            <li>Global</li>
+            <li>Monitoring and revision</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Governance Typologies:</strong>
+          <ul>
+            <li>Boards</li>
+            <li>Committees</li>
+            <li>Government entities</li>
+            <li>Centralized/decentralized</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Data & System Ownership:</strong>
+          <ul>
+            <li>Roles and responsibilities for systems and data</li>
+            <li>Owners</li>
+            <li>Controllers</li>
+            <li>Processors</li>
+            <li>Custodians/stewards</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>5.2 Explain elements of the risk management process</summary>
+        <ul>
+          <li>
+          <strong>Risk Evaluation Lifecycle:</strong>
+          <ul>
+            <li>Risk identification</li>
+            <li>Risk assessment (Ad hoc, Recurring, One-time, Continuous)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Analysis Approaches:</strong>
+          <ul>
+            <li>Risk analysis</li>
+            <li>Qualitative</li>
+            <li>Quantitative</li>
+            <li>Single loss expectancy (SLE)</li>
+            <li>Annualized loss expectancy (ALE)</li>
+            <li>Annualized rate of occurrence (ARO)</li>
+            <li>Probability</li>
+            <li>Likelihood</li>
+            <li>Exposure factor</li>
+            <li>Impact</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Risk Registers & Metrics:</strong>
+          <ul>
+            <li>Risk register</li>
+            <li>Key risk indicators</li>
+            <li>Risk owners</li>
+            <li>Risk threshold</li>
+            <li>Risk tolerance</li>
+            <li>Risk appetite (Expansionary, Conservative, Neutral)</li>
+            <li>Risk reporting</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Strategic Responses:</strong>
+          <ul>
+            <li>Risk management strategies</li>
+            <li>Transfer</li>
+            <li>Accept</li>
+            <li>Exemption</li>
+            <li>Exception</li>
+            <li>Avoid</li>
+            <li>Mitigate</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Business Resilience Metrics:</strong>
+          <ul>
+            <li>Business impact analysis</li>
+            <li>Recovery time objective (RTO)</li>
+            <li>Recovery point objective (RPO)</li>
+            <li>Mean time to repair (MTTR)</li>
+            <li>Mean time between failures (MTBF)</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>5.3 Explain the processes associated with third-party risk assessment and management</summary>
+        <ul>
+          <li>
+          <strong>Vendor Due Diligence:</strong>
+          <ul>
+            <li>Vendor assessment</li>
+            <li>Penetration testing</li>
+            <li>Right-to-audit clause</li>
+            <li>Evidence of internal audits</li>
+            <li>Independent assessments</li>
+            <li>Supply chain analysis</li>
+            <li>Vendor selection</li>
+            <li>Due diligence</li>
+            <li>Conflict of interest</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Legal & Contractual Frameworks:</strong>
+          <ul>
+            <li>Agreement types</li>
+            <li>Service-level agreement (SLA)</li>
+            <li>Memorandum of agreement (MOA)</li>
+            <li>Memorandum of understanding (MOU)</li>
+            <li>Master service agreement (MSA)</li>
+            <li>Work order (WO)/statement of work (SOW)</li>
+            <li>Non-disclosure agreement (NDA)</li>
+            <li>Business partners agreement (BPA)</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Ongoing Monitoring:</strong>
+          <ul>
+            <li>Vendor monitoring</li>
+            <li>Questionnaires</li>
+            <li>Rules of engagement</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>5.4 Summarize elements of effective security compliance</summary>
+        <ul>
+          <li>
+          <strong>Reporting & Governance:</strong>
+          <ul>
+            <li>Compliance reporting (Internal, External)</li>
+            <li>Compliance monitoring</li>
+            <li>Due diligence/care</li>
+            <li>Attestation and acknowledgement (Internal and external)</li>
+            <li>Automation</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Consequences of Non-Compliance:</strong>
+          <ul>
+            <li>Fines</li>
+            <li>Sanctions</li>
+            <li>Reputational damage</li>
+            <li>Loss of license</li>
+            <li>Contractual impacts</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Privacy Frameworks:</strong>
+          <ul>
+            <li>Privacy</li>
+            <li>Legal implications</li>
+            <li>Local/regional</li>
+            <li>National</li>
+            <li>Global</li>
+            <li>Data subject</li>
+            <li>Controller vs. processor</li>
+            <li>Ownership</li>
+            <li>Data inventory and retention</li>
+            <li>Right to be forgotten</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>5.5 Explain types and purposes of audits and assessments</summary>
+        <ul>
+          <li>
+          <strong>Internal Oversight:</strong>
+          <ul>
+            <li>Attestation</li>
+            <li>Internal compliance</li>
+            <li>Audit committee</li>
+            <li>Self-assessments</li>
+          </ul>
+        </li>
+          <li>
+          <strong>External Validation:</strong>
+          <ul>
+            <li>External regulatory</li>
+            <li>Examinations</li>
+            <li>Assessment</li>
+            <li>Independent third-party audit</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Penetration Testing Frameworks:</strong>
+          <ul>
+            <li>Penetration testing</li>
+            <li>Physical</li>
+            <li>Offensive</li>
+            <li>Defensive</li>
+            <li>Integrated</li>
+            <li>Known environment</li>
+            <li>Partially known environment</li>
+            <li>Unknown environment</li>
+            <li>Reconnaissance (Passive, Active)</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+      <details class="faq-item">
+        <summary>5.6 Given a scenario, implement security awareness practices</summary>
+        <ul>
+          <li>
+          <strong>Phishing Readiness:</strong>
+          <ul>
+            <li>Phishing campaigns</li>
+            <li>Recognizing a phishing attempt</li>
+            <li>Responding to reported suspicious messages</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Behavioral & Threat Analysis:</strong>
+          <ul>
+            <li>Anomalous behavior recognition (Risky, Unexpected, Unintentional)</li>
+            <li>Insider threat</li>
+          </ul>
+        </li>
+          <li>
+          <strong>User Training Contexts:</strong>
+          <ul>
+            <li>User guidance and training</li>
+            <li>Policy/handbooks</li>
+            <li>Situational awareness</li>
+            <li>Password management</li>
+            <li>Removable media and cables</li>
+            <li>Social engineering</li>
+            <li>Operational security</li>
+            <li>Hybrid/remote work environments</li>
+          </ul>
+        </li>
+          <li>
+          <strong>Program Assessment:</strong>
+          <ul>
+            <li>Reporting and monitoring</li>
+            <li>Initial</li>
+            <li>Recurring</li>
+            <li>Development</li>
+            <li>Execution</li>
+          </ul>
+        </li>
+        </ul>
+      </details>
+    </div>
+  </section>
 
     <section id="exam-notes" class="next-steps">
       <h2>Exam-Ready Notes</h2>
