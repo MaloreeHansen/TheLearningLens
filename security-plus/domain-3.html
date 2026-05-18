@@ -252,19 +252,125 @@
     <h2>Interactive Simulations</h2>
     <details class="faq-item">
       <summary>VM Escape & Logical Segmentation</summary>
+      
+        <style>
+            .monitor-frame {
+                background: #000;
+                padding: 1rem 1rem 2rem 1rem;
+                border-radius: 16px;
+                box-shadow: 0 24px 48px rgba(0,0,0,0.8), inset 0 2px 4px rgba(255,255,255,0.1);
+                position: relative;
+                border: 2px solid #27272a;
+                margin-bottom: 0;
+                max-width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .monitor-frame::before {
+                content: '';
+                position: absolute;
+                top: 0.75rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 6px;
+                height: 6px;
+                background: #111;
+                border-radius: 50%;
+                box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+            }
+            .monitor-stand {
+                width: 80px;
+                height: 28px;
+                background: linear-gradient(to bottom, #27272a, #18181b);
+                margin: 0 auto;
+                box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+            }
+            .monitor-base {
+                width: 180px;
+                height: 10px;
+                background: #3f3f46;
+                margin: 0 auto 0.5rem auto;
+                border-radius: 4px 4px 0 0;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+            }
+            .canvas-element {
+                width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                background-color: var(--bg-surface-elevated);
+                border: 1px solid var(--border-subtle);
+                border-radius: 4px;
+            }
+            .sim-controls {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .sim-controls .button {
+                padding: 0.8rem 1.5rem;
+                border-radius: var(--radius-md);
+                font-weight: 600;
+                cursor: pointer;
+                transition: all var(--transition-fast);
+                font-family: inherit;
+                font-size: 1rem;
+            }
+            .btn-vulnerable {
+                background: rgba(153, 27, 27, 0.15);
+                color: #fca5a5;
+                border: 1px solid rgba(153, 27, 27, 0.3);
+            }
+            .btn-vulnerable:hover {
+                background: rgba(153, 27, 27, 0.3);
+                border-color: rgba(153, 27, 27, 0.5);
+                color: #fecaca;
+                transform: translateY(-2px);
+            }
+            .btn-secured {
+                background: rgba(22, 101, 52, 0.15);
+                color: #86efac;
+                border: 1px solid rgba(22, 101, 52, 0.3);
+            }
+            .btn-secured:hover {
+                background: rgba(22, 101, 52, 0.3);
+                border-color: rgba(22, 101, 52, 0.5);
+                color: #bbf7d0;
+                transform: translateY(-2px);
+            }
+            .status-panel {
+                text-align: center;
+                padding: 0.6rem 1rem;
+                background-color: var(--bg-surface-elevated);
+                border-radius: var(--radius-md);
+                border: 1px solid var(--border-strong);
+                min-height: 2.5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: var(--text-primary);
+                max-width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+
       <div class="sim-wrapper">
-        <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; text-align: left;">
+        <div style="margin-top: 1.5rem; margin-bottom: 1rem; text-align: left;">
           <h3 style="color: var(--accent-color); font-weight: 600; margin-bottom: 0.5rem; font-size: 1.5rem;">Architectural Vulnerability Simulation</h3>
           <p style="color: var(--text-secondary); margin-bottom: 0; max-width: none;">Observing how a Buffer Overflow leads to a VM Escape reveals the necessity of Logical Segmentation.</p>
         </div>
 
-        <div id="statusText" class="status-panel" style="margin-bottom: 1.5rem; font-size: 1.35rem; border-width: 2px; transition: border-color 0.3s ease;">
-            Select a simulation mode to begin.
+        <div class="monitor-frame">
+            <div class="aspect-video">
+                <canvas id="simCanvas" width="800" height="450" class="canvas-element"></canvas>
+            </div>
         </div>
-
-        <div class="aspect-video">
-            <canvas id="simCanvas" width="800" height="450" class="canvas-element"></canvas>
-        </div>
+        <div class="monitor-stand"></div>
+        <div class="monitor-base"></div>
 
         <div class="sim-controls">
             <button id="btnVulnerable" class="button btn-vulnerable">
@@ -273,6 +379,10 @@
             <button id="btnIsolated" class="button btn-secured">
                 Simulate Segmented Architecture
             </button>
+        </div>
+
+        <div id="statusText" class="status-panel" style="margin-top: 1rem; margin-bottom: 0; font-size: 1.05rem; border-width: 2px; transition: border-color 0.3s ease;">
+            Select a simulation mode to begin.
         </div>
         
 
@@ -361,9 +471,9 @@
       const layout = {
           host: { x: 0, y: 0, w: 800, h: 450 },
           taskbar: { x: 0, y: 410, w: 800, h: 40 },
-          vm: { x: 250, y: 60, w: 500, h: 320 },
+          vm: { x: 150, y: 40, w: 620, h: 350 },
           vmTitlebar: { h: 30 },
-          buffer: { x: 350, y: 220, w: 300, h: 40 }
+          buffer: { x: 250, y: 200, w: 400, h: 40 }
       };
 
       class Particle {
@@ -423,10 +533,10 @@
           particles = [];
           
           if(mode === 'vulnerable') {
-              statusText.innerHTML = "<span style='color: #fca5a5;'>Vulnerable Mode:</span><br>Malicious input is sent to the VM's buffer.";
+              statusText.innerHTML = "<span style='color: #fca5a5;'>Vulnerable Mode:</span> <span style='display:block; margin-top:0.25rem;'>Malicious input is sent to the VM's buffer.";
               statusText.style.borderColor = '#fca5a5';
           } else if (mode === 'isolated') {
-              statusText.innerHTML = "<span style='color: #86efac;'>Isolated Mode:</span><br>Strict logical segmentation is active at the hypervisor layer.";
+              statusText.innerHTML = "<span style='color: #86efac;'>Isolated Mode:</span> <span style='display:block; margin-top:0.25rem;'>Strict logical segmentation is active at the hypervisor layer.";
               statusText.style.borderColor = '#86efac';
           }
           
@@ -545,30 +655,30 @@
           // Update Status Text based on timeline
           if (mode === 'vulnerable') {
               if (frame === 300) {
-                  statusText.innerHTML = "<span style='color: #fde047;'>Buffer Overflow:</span><br>The payload exceeds allocated memory space.";
+                  statusText.innerHTML = "<span style='color: #fde047;'>Buffer Overflow:</span> <span style='display:block; margin-top:0.25rem;'>The payload exceeds allocated memory space.";
                   statusText.style.borderColor = '#fde047';
               }
               if (frame === 480) {
-                  statusText.innerHTML = "<span style='color: #fb923c;'>VM Escape:</span><br>Memory boundaries fail; malicious code execution spills over.";
+                  statusText.innerHTML = "<span style='color: #fb923c;'>VM Escape:</span> <span style='display:block; margin-top:0.25rem;'>Memory boundaries fail; malicious code execution spills over.";
                   statusText.style.borderColor = '#fb923c';
               }
               if (frame === 640) {
-                  statusText.innerHTML = "<span style='color: #ef4444; font-weight: bold;'>SYSTEM COMPROMISED:</span><br>Without segmentation, the Host OS is fully exposed to the Guest's breach.";
+                  statusText.innerHTML = "<span style='color: #ef4444; font-weight: bold;'>SYSTEM COMPROMISED:</span> <span style='display:block; margin-top:0.25rem;'>Without segmentation, the Host OS is fully exposed to the Guest's breach.";
                   statusText.style.borderColor = '#ef4444';
               }
           }
 
           if (mode === 'isolated') {
               if (frame === 300) {
-                  statusText.innerHTML = "<span style='color: #fde047;'>Buffer Overflow:</span><br>The payload exceeds allocated memory space.";
+                  statusText.innerHTML = "<span style='color: #fde047;'>Buffer Overflow:</span> <span style='display:block; margin-top:0.25rem;'>The payload exceeds allocated memory space.";
                   statusText.style.borderColor = '#fde047';
               }
               if (frame === 480) {
-                  statusText.innerHTML = "<span style='color: #60a5fa;'>Containment:</span><br>Malicious execution attempts to escape the VM.";
+                  statusText.innerHTML = "<span style='color: #60a5fa;'>Containment:</span> <span style='display:block; margin-top:0.25rem;'>Malicious execution attempts to escape the VM.";
                   statusText.style.borderColor = '#60a5fa';
               }
               if (frame === 640) {
-                  statusText.innerHTML = "<span style='color: #4ade80; font-weight: bold;'>SYSTEM SECURED:</span><br>Strict logical segmentation and hardware isolation blocks the escape, protecting the Host OS.";
+                  statusText.innerHTML = "<span style='color: #4ade80; font-weight: bold;'>SYSTEM SECURED:</span> <span style='display:block; margin-top:0.25rem;'>Strict logical segmentation and hardware isolation blocks the escape, protecting the Host OS.";
                   statusText.style.borderColor = '#4ade80';
               }
           }
