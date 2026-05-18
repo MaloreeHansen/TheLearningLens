@@ -247,6 +247,355 @@
     </div>
   </section>
 
+
+  <section class="why-section" style="margin-top: 4rem;">
+    <h2>Interactive Simulations</h2>
+    <details class="faq-item">
+      <summary>VM Escape & Logical Segmentation</summary>
+      <div class="sim-wrapper">
+        <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; text-align: left;">
+          <h3 style="color: var(--accent-color); font-weight: 600; margin-bottom: 0.5rem; font-size: 1.5rem;">Architectural Vulnerability Simulation</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 0; max-width: none;">Observing how a Buffer Overflow leads to a VM Escape reveals the necessity of Logical Segmentation.</p>
+        </div>
+
+        <div id="statusText" class="status-panel" style="margin-bottom: 1.5rem; font-size: 1.35rem; border-width: 2px; transition: border-color 0.3s ease;">
+            Select a simulation mode to begin.
+        </div>
+
+        <div class="aspect-video">
+            <canvas id="simCanvas" width="800" height="450" class="canvas-element"></canvas>
+        </div>
+
+        <div class="sim-controls">
+            <button id="btnVulnerable" class="button btn-vulnerable">
+                Simulate Vulnerable Architecture
+            </button>
+            <button id="btnIsolated" class="button btn-secured">
+                Simulate Segmented Architecture
+            </button>
+        </div>
+        
+
+
+        <div class="simulation-explanation" style="margin-top: 2rem; border-top: 1px solid var(--border-subtle); padding-top: 2rem;">
+            <style>
+                .simulation-explanation li { margin-bottom: 1.75rem !important; line-height: 1.7; }
+                .simulation-explanation li strong { margin-bottom: 0.6rem !important; font-size: 1.05rem; }
+                .simulation-explanation p { margin-bottom: 1.5rem !important; line-height: 1.7; max-width: none; text-align: left; }
+            </style>
+            <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem; font-weight: 700;">The Architecture of an Exploit: Buffer Overflows and VM Escapes</h3>
+            <p>The accompanying animation demonstrates how a localized vulnerability (a buffer overflow) can escalate into a system-wide compromise (a VM escape) if proper architectural defenses are missing.</p>
+            <p>This breakdown explains the simulation mechanics and the necessity of logical segmentation and isolation.</p>
+
+            <h4 style="margin-top: 3rem; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.4rem;">Phase 1: The Initial Breach (Buffer Overflow)</h4>
+            <p>The simulation begins with data flowing into the Guest Virtual Machine (VM) via network input. A vulnerability exists in the guest application's memory handling.</p>
+            <p><strong>Mechanics:</strong></p>
+            <ul>
+                <li><strong>Memory Allocation:</strong> Applications receive specific memory blocks (buffers) to store temporary data.</li>
+                <li><strong>The Flaw:</strong> A buffer overflow happens when incoming data exceeds buffer capacity, and the application fails to verify the size.</li>
+                <li><strong>The Overwrite:</strong> Excess data (red particles) spills over, overwriting adjacent memory spaces.</li>
+                <li><strong>Execution Hijacking:</strong> Attackers craft this data to overwrite control addresses. This forces the application to execute malicious instructions instead of its intended code.</li>
+            </ul>
+            <p style="color: var(--text-muted); font-style: italic;">In the animation: Green "valid" data stays within bounds; red "malicious" payload forces past buffer limits, taking control within the Guest VM.</p>
+
+            <h4 style="margin-top: 3rem; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.4rem;">Phase 2: The Escalation (VM Escape)</h4>
+            <p>A compromised VM application is problematic, but the core promise of virtualization is sandbox containment. A "VM Escape" breaks this containment.</p>
+            <p><strong>Mechanics:</strong></p>
+            <ul>
+                <li><strong>The Shared Layer:</strong> VMs run on a Hypervisor (or Host OS), which manages resources and provides virtual hardware.</li>
+                <li><strong>Exploiting the Interface:</strong> The hypervisor and guest VM communicate. An attacker (now running code within the guest) targets vulnerabilities in this interface or virtual device drivers.</li>
+                <li><strong>Breaking the Boundary:</strong> By sending malformed requests, the attacker forces the hypervisor to execute malicious instructions on the Host OS.</li>
+                <li><strong>Total Compromise:</strong> Executing code at the hypervisor/host OS level grants access to physical hardware, the host OS, and potentially other VMs on the server.</li>
+            </ul>
+            <p><strong>Real-World Examples:</strong></p>
+            <ul>
+                <li><strong>VENOM (CVE-2015-3456):</strong> Exploited a flaw in the virtual floppy disk controller (FDC) code used by many hypervisors. This allowed an attacker in a guest VM to crash the hypervisor or execute code on the host.</li>
+                <li><strong>Cloudburst (CVE-2009-1244):</strong> Targeted a vulnerability in VMware's virtual video adapter. It enabled code execution on the host OS from within a guest VM.</li>
+            </ul>
+            <p style="color: var(--text-muted); font-style: italic;">In the "Vulnerable" animation mode: Red particles breach the Guest VM boundary, flooding the Host OS space. The environment turns dark red, indicating total compromise.</p>
+
+            <h4 style="margin-top: 3rem; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.4rem;">Phase 3: Architectural Defense (Segmentation & Isolation)</h4>
+            <p>The second mode demonstrates why architectural design choices are critical to preventing escalation.</p>
+            <p><strong>Defenses:</strong></p>
+            <ul>
+                <li><strong>1. Logical Segmentation (The "VM Firewall" Concept):</strong> Dividing systems into isolated segments limits communication pathways.
+                <br><em>Mechanism:</em> Strict firewall rules and Virtual LANs (VLANs) restrict lateral movement and host communication attempts.</li>
+                <li><strong>2. Strict Isolation (The Glowing Boundary):</strong> Containing processes and memory using hardware-assisted virtualization (e.g., Intel VT-x, AMD-V).
+                <br><em>Mechanism:</em> The hypervisor's Memory Management Unit (MMU) strictly enforces boundaries. If a compromised guest attempts unauthorized memory writes, the hardware intercepts and denies the action, protecting the host.</li>
+            </ul>
+            <p style="color: var(--text-muted); font-style: italic;">In the "Isolated" animation mode: The green isolation barrier activates. The buffer overflow occurs, but malicious execution is blocked from leaving the guest environment. The Host OS remains secure.</p>
+
+            <h4 style="margin-top: 3rem; margin-bottom: 1rem; color: var(--accent-color); font-size: 1.4rem;">Summary</h4>
+            <p>Relying solely on application-level security is insufficient. A defense-in-depth strategy requires architectural boundaries—logical segmentation and strict isolation—to contain breaches when they inevitably occur.</p>
+        </div>
+
+      </div>
+    </details>
+  </section>
+
+    <script>
+      const canvas = document.getElementById('simCanvas');
+      const ctx = canvas.getContext('2d');
+      const statusText = document.getElementById('statusText');
+
+      // Animation State
+      let mode = 'idle'; // idle, vulnerable, isolated
+      let frame = 0;
+      let particles = [];
+      let animationId;
+
+      // Colors matching site palette
+      const colors = {
+          host: '#1a1a1c', // bg-surface-elevated
+          hostUI: '#27272a', // zinc-800 for taskbar
+          vm: '#121212',   // bg-surface
+          vmUI: '#27272a', // titlebar
+          buffer: 'rgba(255, 255, 255, 0.1)',
+          dataValid: '#86efac',
+          dataMalicious: '#fca5a5',
+          isolation: '#84a98c', // accent-color
+          compromised: '#450a0a'
+      };
+
+      // Layout Geometry (Canvas is 800x450)
+      const layout = {
+          host: { x: 0, y: 0, w: 800, h: 450 },
+          taskbar: { x: 0, y: 410, w: 800, h: 40 },
+          vm: { x: 250, y: 60, w: 500, h: 320 },
+          vmTitlebar: { h: 30 },
+          buffer: { x: 350, y: 220, w: 300, h: 40 }
+      };
+
+      class Particle {
+          constructor(x, y, color, isMalicious) {
+              this.x = x;
+              this.y = y;
+              this.color = color;
+              this.isMalicious = isMalicious;
+              this.vx = 1 + Math.random() * 1;
+              this.vy = (Math.random() - 0.5) * 0.5;
+              this.active = true;
+              this.escaped = false;
+          }
+
+          update(frame) {
+              if (!this.active) return;
+              
+              this.x += this.vx;
+              this.y += this.vy;
+
+              // Buffer limits
+              if (this.x > layout.buffer.x + layout.buffer.w - 10 && !this.isMalicious) {
+                  this.active = false; // Valid data stays in buffer
+              }
+
+              // Malicious data overflows
+              if (this.isMalicious && this.x > layout.buffer.x + layout.buffer.w) {
+                  this.vx = 2;
+                  this.vy = (Math.random() - 0.5) * 3;
+                  
+                  // Hit VM boundary (right side or top/bottom)
+                  if (this.x > layout.vm.x + layout.vm.w - 10 || this.y < layout.vm.y + 10 || this.y > layout.vm.y + layout.vm.h - 10) {
+                      if (mode === 'isolated') {
+                          // Blocked by isolation - bounce back
+                          this.vx = -1 * Math.abs(this.vx); 
+                          if (this.x > layout.vm.x + layout.vm.w - 15) this.x = layout.vm.x + layout.vm.w - 15;
+                          if (this.y < layout.vm.y + 15) this.vy = Math.abs(this.vy);
+                          if (this.y > layout.vm.y + layout.vm.h - 15) this.vy = -1 * Math.abs(this.vy);
+                      } else {
+                          // Escape VM
+                          this.escaped = true;
+                      }
+                  }
+              }
+          }
+
+          draw() {
+              ctx.fillStyle = this.color;
+              ctx.fillRect(this.x, this.y, 8, 8);
+          }
+      }
+
+      function resetSim(newMode) {
+          cancelAnimationFrame(animationId);
+          mode = newMode;
+          frame = 0;
+          particles = [];
+          
+          if(mode === 'vulnerable') {
+              statusText.innerHTML = "<span style='color: #fca5a5;'>Vulnerable Mode:</span><br>Malicious input is sent to the VM's buffer.";
+              statusText.style.borderColor = '#fca5a5';
+          } else if (mode === 'isolated') {
+              statusText.innerHTML = "<span style='color: #86efac;'>Isolated Mode:</span><br>Strict logical segmentation is active at the hypervisor layer.";
+              statusText.style.borderColor = '#86efac';
+          }
+          
+          animate();
+      }
+
+      function drawRoundedRect(x, y, w, h, radius) {
+          ctx.beginPath();
+          ctx.moveTo(x + radius, y);
+          ctx.lineTo(x + w - radius, y);
+          ctx.quadraticCurveTo(x + w, y, x + w, y + radius);
+          ctx.lineTo(x + w, y + h - radius);
+          ctx.quadraticCurveTo(x + w, y + h, x + w - radius, y + h);
+          ctx.lineTo(x + radius, y + h);
+          ctx.quadraticCurveTo(x, y + h, x, y + h - radius);
+          ctx.lineTo(x, y + radius);
+          ctx.quadraticCurveTo(x, y, x + radius, y);
+          ctx.closePath();
+          ctx.fill();
+      }
+
+      function drawEnvironment() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          // Draw Host OS (Fills entire canvas)
+          let hostColor = colors.host;
+          if (mode === 'vulnerable' && frame > 600) hostColor = colors.compromised;
+          
+          ctx.fillStyle = hostColor;
+          ctx.fillRect(layout.host.x, layout.host.y, layout.host.w, layout.host.h);
+          
+          // Host Taskbar
+          ctx.fillStyle = colors.hostUI;
+          ctx.fillRect(layout.taskbar.x, layout.taskbar.y, layout.taskbar.w, layout.taskbar.h);
+          
+          // Start Button / Logo
+          ctx.fillStyle = '#a1a1aa';
+          ctx.fillRect(15, layout.taskbar.y + 10, 20, 20);
+          
+          ctx.fillStyle = '#a1a1aa'; // text-secondary
+          ctx.font = '14px Outfit, sans-serif';
+          ctx.fillText('Host OS Environment', 50, layout.taskbar.y + 25);
+
+          // Draw Isolation Layer (if active, behind VM)
+          if (mode === 'isolated') {
+              ctx.strokeStyle = colors.isolation;
+              ctx.lineWidth = 6;
+              ctx.strokeRect(layout.vm.x - 3, layout.vm.y - 3, layout.vm.w + 6, layout.vm.h + 6);
+              // Glow effect
+              ctx.shadowColor = colors.isolation;
+              ctx.shadowBlur = 15;
+              ctx.strokeRect(layout.vm.x - 3, layout.vm.y - 3, layout.vm.w + 6, layout.vm.h + 6);
+              ctx.shadowBlur = 0; // reset
+          }
+
+          // Draw Guest VM (App Window)
+          ctx.fillStyle = colors.vm;
+          drawRoundedRect(layout.vm.x, layout.vm.y, layout.vm.w, layout.vm.h, 8);
+          ctx.strokeStyle = '#3f3f46';
+          ctx.lineWidth = 1;
+          ctx.strokeRect(layout.vm.x, layout.vm.y, layout.vm.w, layout.vm.h); // Add border
+          
+          // VM Titlebar
+          ctx.fillStyle = colors.vmUI;
+          ctx.beginPath();
+          ctx.moveTo(layout.vm.x + 8, layout.vm.y);
+          ctx.lineTo(layout.vm.x + layout.vm.w - 8, layout.vm.y);
+          ctx.quadraticCurveTo(layout.vm.x + layout.vm.w, layout.vm.y, layout.vm.x + layout.vm.w, layout.vm.y + 8);
+          ctx.lineTo(layout.vm.x + layout.vm.w, layout.vm.y + layout.vmTitlebar.h);
+          ctx.lineTo(layout.vm.x, layout.vm.y + layout.vmTitlebar.h);
+          ctx.lineTo(layout.vm.x, layout.vm.y + 8);
+          ctx.quadraticCurveTo(layout.vm.x, layout.vm.y, layout.vm.x + 8, layout.vm.y);
+          ctx.closePath();
+          ctx.fill();
+
+          // Window controls (macOS style dots)
+          ctx.fillStyle = '#ef4444'; ctx.beginPath(); ctx.arc(layout.vm.x + 20, layout.vm.y + 15, 5, 0, Math.PI*2); ctx.fill();
+          ctx.fillStyle = '#eab308'; ctx.beginPath(); ctx.arc(layout.vm.x + 35, layout.vm.y + 15, 5, 0, Math.PI*2); ctx.fill();
+          ctx.fillStyle = '#22c55e'; ctx.beginPath(); ctx.arc(layout.vm.x + 50, layout.vm.y + 15, 5, 0, Math.PI*2); ctx.fill();
+
+          ctx.fillStyle = '#ededed'; // text-primary
+          ctx.textAlign = "center";
+          ctx.fillText('Guest Virtual Machine', layout.vm.x + (layout.vm.w/2), layout.vm.y + 20);
+          ctx.textAlign = "left";
+
+          // Draw Buffer
+          ctx.fillStyle = colors.buffer;
+          ctx.fillRect(layout.buffer.x, layout.buffer.y, layout.buffer.w, layout.buffer.h);
+          ctx.fillStyle = '#ededed';
+          ctx.fillText('Memory Buffer', layout.buffer.x + 10, layout.buffer.y + 25);
+      }
+
+      function animate() {
+          frame++;
+          drawEnvironment();
+
+          // Spawn Particles
+          if (frame > 40 && frame < 200 && frame % 10 === 0) {
+              // Normal data
+              particles.push(new Particle(50, layout.buffer.y + 15, colors.dataValid, false));
+          }
+
+          if (frame > 240 && frame < 440 && frame % 4 === 0) {
+              // Malicious payload causing overflow
+              particles.push(new Particle(50, layout.buffer.y + 15, colors.dataMalicious, true));
+          }
+
+          // Update & Draw Particles
+          let escapedCount = 0;
+          particles.forEach(p => {
+              p.update(frame);
+              p.draw();
+              if (p.escaped) escapedCount++;
+          });
+
+          // Update Status Text based on timeline
+          if (mode === 'vulnerable') {
+              if (frame === 300) {
+                  statusText.innerHTML = "<span style='color: #fde047;'>Buffer Overflow:</span><br>The payload exceeds allocated memory space.";
+                  statusText.style.borderColor = '#fde047';
+              }
+              if (frame === 480) {
+                  statusText.innerHTML = "<span style='color: #fb923c;'>VM Escape:</span><br>Memory boundaries fail; malicious code execution spills over.";
+                  statusText.style.borderColor = '#fb923c';
+              }
+              if (frame === 640) {
+                  statusText.innerHTML = "<span style='color: #ef4444; font-weight: bold;'>SYSTEM COMPROMISED:</span><br>Without segmentation, the Host OS is fully exposed to the Guest's breach.";
+                  statusText.style.borderColor = '#ef4444';
+              }
+          }
+
+          if (mode === 'isolated') {
+              if (frame === 300) {
+                  statusText.innerHTML = "<span style='color: #fde047;'>Buffer Overflow:</span><br>The payload exceeds allocated memory space.";
+                  statusText.style.borderColor = '#fde047';
+              }
+              if (frame === 480) {
+                  statusText.innerHTML = "<span style='color: #60a5fa;'>Containment:</span><br>Malicious execution attempts to escape the VM.";
+                  statusText.style.borderColor = '#60a5fa';
+              }
+              if (frame === 640) {
+                  statusText.innerHTML = "<span style='color: #4ade80; font-weight: bold;'>SYSTEM SECURED:</span><br>Strict logical segmentation and hardware isolation blocks the escape, protecting the Host OS.";
+                  statusText.style.borderColor = '#4ade80';
+              }
+          }
+
+          // Connection line from external to VM
+          ctx.beginPath();
+          ctx.moveTo(0, layout.buffer.y + 20);
+          ctx.lineTo(layout.vm.x, layout.buffer.y + 20);
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          ctx.fillStyle = '#a1a1aa';
+          ctx.fillText('Network Input', 10, layout.buffer.y + 15);
+
+          if (frame < 1000) {
+              animationId = requestAnimationFrame(animate);
+          }
+      }
+
+      // Event Listeners
+      document.getElementById('btnVulnerable').addEventListener('click', () => resetSim('vulnerable'));
+      document.getElementById('btnIsolated').addEventListener('click', () => resetSim('isolated'));
+
+      // Initial Draw
+      drawEnvironment();
+  </script>
+
   </main>
   <div id="shared-footer"></div>
   <script src="../scripts/headerFooter.js"></script>
