@@ -443,6 +443,43 @@
     </details>
   </section>
 
+  <section class="why-section" style="margin-top: 4rem;">
+    <h2>Beyond the Surface: the Deeper Threats</h2>
+
+    <details class="faq-item">
+      <summary>Beyond the VM Escape: The Attacker's Objective</summary>
+      <div class="simulation-explanation" style="padding: 1.5rem;">
+        <p>The immediate consequence of the buffer overflow is the ability to execute arbitrary code within the context of the hypervisor process. The ultimate intentions behind achieving this level of access are severe:</p>
+
+        <ul>
+          <li><strong>Host Operating System Compromise:</strong> Gaining control of the hypervisor process often equates to gaining root or SYSTEM level privileges on the underlying host operating system. This allows the attacker to install backdoors, modify system configurations, or steal host-level credentials.</li>
+
+          <li><strong>Lateral Movement and Cross-VM Attacks:</strong> Once the host is compromised, the isolation between virtual machines is broken. An attacker can access the memory, storage, and network traffic of all other VMs running on that same physical server. This is the primary objective in cloud environments.</li>
+
+          <li><strong>Data Exfiltration:</strong> Access to the host and neighboring VMs enables the systematic theft of sensitive data across the entire infrastructure.</li>
+
+          <li><strong>Denial of Service (DoS):</strong> If the buffer overflow is poorly executed or intentionally destructive, it causes the hypervisor process to crash. This instantly halts all virtual machines running on that host, causing a significant disruption of service.</li>
+        </ul>
+
+        <p>The VENOM vulnerability demonstrated that a seemingly insignificant, legacy component could compromise the foundational isolation provided by virtualization.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Coming soon</summary>
+      <div style="padding: 1.5rem;">
+        <p style="color: var(--text-secondary);">Content will be added here.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Coming soon</summary>
+      <div style="padding: 1.5rem;">
+        <p style="color: var(--text-secondary);">Content will be added here.</p>
+      </div>
+    </details>
+
+  </section>
     <script>
       const canvas = document.getElementById('simCanvas');
       const ctx = canvas.getContext('2d');
